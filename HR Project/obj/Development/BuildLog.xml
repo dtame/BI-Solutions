@@ -2,18 +2,23 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>HR Project</Name>
-    <LastWriteTime>2014-08-04T22:01:59.7797509Z</LastWriteTime>
+    <LastWriteTime>2014-08-15T00:32:43.6929227Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>LoadSourceToStaging.dtsx</Name>
-      <LastWriteTime>2014-08-04T15:05:55.1752618Z</LastWriteTime>
+      <LastWriteTime>2014-08-15T00:29:06.5417758Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>FixErrorRows.dtsx</Name>
-      <LastWriteTime>2014-08-04T18:17:55.0590386Z</LastWriteTime>
+      <Name>Load Dim.dtsx</Name>
+      <LastWriteTime>2014-08-11T14:49:40.9402088Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>CorrectedRowsInjection.dtsx</Name>
+      <LastWriteTime>2014-08-14T14:28:23.0274265Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

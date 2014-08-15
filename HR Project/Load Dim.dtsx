@@ -4,14 +4,14 @@
   DTS:ExecutableType="SSIS.Package.3"
   DTS:CreatorName="LIGHTOFGOD\tame"
   DTS:CreatorComputerName="LIGHTOFGOD"
-  DTS:CreationDate="8/4/2014 1:17:13 PM"
+  DTS:CreationDate="8/11/2014 9:48:31 AM"
   DTS:PackageType="5"
   DTS:VersionBuild="1"
-  DTS:VersionGUID="{35BBEAE5-A16D-495F-904C-B90FA6A2BAED}"
+  DTS:VersionGUID="{2FE6D3A1-A0F6-4DE4-B70E-D4937C92C2FF}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
-  DTS:ObjectName="FixErrorRows"
-  DTS:DTSID="{F740E114-D93D-4BD3-B965-1F0E12BB35C4}"
+  DTS:ObjectName="Load Dim"
+  DTS:DTSID="{32A55F44-A36C-4C74-9CB4-F9CD99B77482}"
   DTS:CreationName="SSIS.Package.3">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>

@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="LIGHTOFGOD"
   DTS:CreationDate="8/4/2014 1:17:13 PM"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{35BBEAE5-A16D-495F-904C-B90FA6A2BAED}"
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{0E769C9F-AB1B-473A-8C7C-5271427660EB}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
   DTS:ObjectName="FixErrorRows"
@@ -16,7 +16,25 @@
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Open the Error Corrector Task"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ThreadHint="0"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Open the Error Corrector Task"
+      DTS:DTSID="{6D8A97DB-7FB3-4588-B1EF-0D75DB7273A3}"
+      DTS:Description="Execute Process Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteProcess.ExecuteProcess, Microsoft.SqlServer.ExecProcTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Program Files\Microsoft Office\Office15\EXCEL.EXE"
+          Arguments="C:\ErrorCorrector.xls" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -24,5 +42,17 @@
 <Objects
   Version="sql11">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Open the Error Corrector Task"
+          TopLeft="198,78" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
