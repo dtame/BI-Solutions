@@ -1,0 +1,1679 @@
+<?xml version="1.0"?>
+<DTS:Executable
+  DTS:refId="Package" xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:CreatorName="LIGHTOFGOD\tame"
+  DTS:CreatorComputerName="LIGHTOFGOD"
+  DTS:CreationDate="8/19/2014 9:03:06 PM"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{EC6C2293-F224-4719-8250-2A8C57456D10}"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="HR_DW_Sync"
+  DTS:DTSID="{7849FD52-ED00-4B1F-807D-189B7439A216}"
+  DTS:CreationName="SSIS.Package.3">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:ObjectName="Flat File Connection Manager"
+      DTS:DTSID="{07621ECC-219A-4B06-B6E5-39A3F9D16DC4}"
+      DTS:Description="Employee DM Source"
+      DTS:CreationName="FLATFILE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\tame\Documents\Business Intelligence\BISolutions\Exercise\HR Exercice\employee.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ID"
+              DTS:DTSID="{A038A286-CBB1-4E6E-BE20-160892FF657C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Nom"
+              DTS:DTSID="{7595B370-EBDF-4EEC-B3B9-C854DA723BA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Prenom"
+              DTS:DTSID="{BE419ED0-75E7-4BAA-9CFC-308DA2FF2BB8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DateOfBirth"
+              DTS:DTSID="{AFFCFDBD-DB71-4F0A-85A8-65558B3ECFA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tel"
+              DTS:DTSID="{825FA625-FE96-4326-BC10-51847C7FD696}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="adresse"
+              DTS:DTSID="{F2C0F5E0-F1EE-428F-9227-FD4549EB148C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{790102ED-9295-4BE8-9CC8-D4B2DD5B5566}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="poste"
+              DTS:DTSID="{F5882C07-DEF0-4852-A1F4-2DE992C7F624}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Genre"
+              DTS:DTSID="{B2E833EF-CAAF-45BF-B3D0-61CDB41E175E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Departement"
+              DTS:DTSID="{C1E2C243-68C4-423A-A629-1BA1BF382C50}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date Embauche"
+              DTS:DTSID="{1B666C0E-8459-4908-A550-5482C0444EBF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="isSalaried"
+              DTS:DTSID="{FC038745-DE48-474D-A44F-F36B4F07AB33}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DWHumanResource]"
+      DTS:ObjectName="LocalHost.DWHumanResource"
+      DTS:DTSID="{356D10BE-FDD2-4DCD-B5B0-545336EC5E9C}"
+      DTS:CreationName="OLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DWHumanResource;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dimensions table Sync"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dimensions table Sync"
+      DTS:DTSID="{9EFB3EFA-0C71-49F0-9542-7C3E8478B9ED}"
+      DTS:Description="Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Dimensions table Sync\Sync DimDepartment Task"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sync DimDepartment Task"
+          DTS:DTSID="{FF8CBE8C-BCD8-4DA3-8E98-B087294B76B0}"
+          DTS:Description="Data Flow Task"
+          DTS:CreationName="SSIS.Pipeline.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dimensions table Sync\Sync DimEmployee Task"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sync DimEmployee Task"
+          DTS:DTSID="{7F5F0D33-6C1F-40E4-AA26-77F0736C72F1}"
+          DTS:Description="Data Flow Task"
+          DTS:CreationName="SSIS.Pipeline.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dimensions table Sync.PrecedenceConstraints[Constraint]"
+          DTS:From="Package\Dimensions table Sync\Sync DimEmployee Task"
+          DTS:To="Package\Dimensions table Sync\Sync DimDepartment Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:DTSID="{18D8A91D-9BBA-4EF8-A1B3-EA31E9548FFE}"
+          DTS:CreationName="" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Fact table Sync"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Fact table Sync"
+      DTS:DTSID="{CF4175B0-C917-419B-98F1-E3323DB612BC}"
+      DTS:Description="Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Fact table Sync\Sync Fact HR Snapshot Task"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sync Fact HR Snapshot Task"
+          DTS:DTSID="{BFF99EC1-E063-482B-9745-627E9D9BFD92}"
+          DTS:Description="Data Flow Task"
+          DTS:CreationName="SSIS.Pipeline.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load and Clean Staging"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load and Clean Staging"
+      DTS:DTSID="{58715EBD-4632-41FC-832A-9DB733A4E1E4}"
+      DTS:Description="Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load and Clean Staging\Load Department Task"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Department Task"
+          DTS:DTSID="{EB9C8EC0-30EE-4469-9148-6A753679511D}"
+          DTS:Description="Data Flow Task"
+          DTS:CreationName="SSIS.Pipeline.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load and Clean Staging\Load Employee Task"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Employee Task"
+          DTS:DTSID="{CCEA76DA-D5A1-46FB-92DA-12953DA5FC6B}"
+          DTS:Description="Data Flow Task"
+          DTS:CreationName="SSIS.Pipeline.3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load and Clean Staging\Load Employee Task\Data Conversion"
+                  name="Data Conversion"
+                  componentClassID="{62B1106C-7DB8-4EC8-ADD6-4C664DFFC54A}"
+                  description="Data Conversion"
+                  usesDispositions="true"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+                  <inputs>
+                    <input
+                      refId="Package\Load and Clean Staging\Load Employee Task\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Data Conversion.Outputs[Data Conversion Output]"
+                      name="Data Conversion Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Load and Clean Staging\Load Employee Task\Data Conversion.Inputs[Data Conversion Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                      name="Data Conversion Error Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Load and Clean Staging\Load Employee Task\Data Conversion.Inputs[Data Conversion Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source"
+                  name="Employee File Source"
+                  componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+                  description="Flat File Source"
+                  localeId="1033"
+                  usesDispositions="true"
+                  version="1"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1">
+                  <properties>
+                    <property
+                      name="RetainNulls"
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null.">false</property>
+                    <property
+                      name="FileNameColumnName"
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Connections[FlatFileConnection]"
+                      name="FlatFileConnection"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[ID]"
+                          name="ID"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[ID]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[ID]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Nom]"
+                          name="Nom"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Nom]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Nom]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Prenom]"
+                          name="Prenom"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Prenom]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Prenom]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[DateOfBirth]"
+                          name="DateOfBirth"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[DateOfBirth]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[DateOfBirth]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Tel]"
+                          name="Tel"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Tel]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Tel]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[adresse]"
+                          name="adresse"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[adresse]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[adresse]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[email]"
+                          name="email"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[email]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[email]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[poste]"
+                          name="poste"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[poste]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[poste]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Genre]"
+                          name="Genre"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Genre]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Genre]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Departement]"
+                          name="Departement"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Departement]"
+                          length="50"
+                          dataType="str"
+                          codePage="1252"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Departement]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Date Embauche]"
+                          name="Date Embauche"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Date Embauche]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Date Embauche]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[isSalaried]"
+                          name="isSalaried"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[isSalaried]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[isSalaried]">
+                          <properties>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                            <property
+                              name="UseBinaryFormat"
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format.">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                          name="ID"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Nom]"
+                          name="Nom"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Prenom]"
+                          name="Prenom"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[DateOfBirth]"
+                          name="DateOfBirth"
+                          dataType="date" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Tel]"
+                          name="Tel"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[adresse]"
+                          name="adresse"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
+                          name="email"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[poste]"
+                          name="poste"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Genre]"
+                          name="Genre"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Departement]"
+                          name="Departement"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[Date Embauche]"
+                          name="Date Embauche"
+                          dataType="date" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].ExternalColumns[isSalaried]"
+                          name="isSalaried"
+                          dataType="bool" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Error Output]"
+                      name="Flat File Source Error Output"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          dataType="text"
+                          codePage="1252" />
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load and Clean Staging\Load Employee Task\Lookup"
+                  name="Lookup"
+                  componentClassID="{671046B0-AA63-4C9F-90E4-C06E0B710CE3}"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  usesDispositions="true"
+                  version="6"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6">
+                  <properties>
+                    <property
+                      name="SqlCommand"
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                      expressionType="Notify">Select 
+[EmployeeID]
+,[BirthDate]
+,[HiringDate]
+
+From dbo.DimEmployee</property>
+                    <property
+                      name="SqlCommandParam"
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+                      expressionType="Notify">select * from (Select 
+[EmployeeID]
+,[BirthDate]
+,[HiringDate]
+
+From dbo.DimEmployee) [refTable]
+where [refTable].[EmployeeID] = ?</property>
+                    <property
+                      name="ConnectionType"
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      name="CacheType"
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      typeConverter="CacheType">0</property>
+                    <property
+                      name="NoMatchBehavior"
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      name="NoMatchCachePercentage"
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset.">0</property>
+                    <property
+                      name="MaxMemoryUsage"
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform.">25</property>
+                    <property
+                      name="MaxMemoryUsage64"
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform.">25</property>
+                    <property
+                      name="ReferenceMetadataXml"
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format.">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="EmployeeID" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="BirthDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="HiringDate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      name="ParameterMap"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      containsID="true">#{Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[ID]};</property>
+                    <property
+                      name="DefaultCodePage"
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                    <property
+                      name="TreatDuplicateKeysAsError"
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used.">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load and Clean Staging\Load Employee Task\Lookup.Connections[OleDbConnection]"
+                      name="OleDbConnection"
+                      description="Connection manager used to access lookup data."
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.DWHumanResource]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.DWHumanResource]" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load and Clean Staging\Load Employee Task\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Lookup.Inputs[Lookup Input].Columns[ID]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[ID]"
+                          cachedName="ID"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252">
+                          <properties>
+                            <property
+                              name="JoinToReferenceColumn"
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins.">EmployeeID</property>
+                            <property
+                              name="CopyFromReferenceColumn"
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied." />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Lookup.Outputs[Lookup Match Output]"
+                      name="Lookup Match Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Load and Clean Staging\Load Employee Task\Lookup.Inputs[Lookup Input]"
+                      errorOrTruncationOperation="Lookup">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Lookup.Outputs[Lookup No Match Output]"
+                      name="Lookup No Match Output"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Load and Clean Staging\Load Employee Task\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Lookup.Outputs[Lookup Error Output]"
+                      name="Lookup Error Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Load and Clean Staging\Load Employee Task\Lookup.Inputs[Lookup Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination"
+                  name="OLE DB Destination"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  description="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+                  <properties>
+                    <property
+                      name="CommandTimeout"
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                    <property
+                      name="OpenRowset"
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset.">[dbo].[DimEmployee]</property>
+                    <property
+                      name="OpenRowsetVariable"
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                    <property
+                      name="SqlCommand"
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      name="DefaultCodePage"
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                    <property
+                      name="AlwaysUseDefaultCodePage"
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                    <property
+                      name="AccessMode"
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      name="FastLoadKeepIdentity"
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                    <property
+                      name="FastLoadKeepNulls"
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                    <property
+                      name="FastLoadOptions"
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      name="FastLoadMaxInsertCommitSize"
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Connections[OleDbConnection]"
+                      name="OleDbConnection"
+                      description="The OLE DB runtime connection used to access the database."
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.DWHumanResource]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.DWHumanResource]" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      name="OLE DB Destination Input"
+                      hasSideEffects="true"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[email]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[email]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                          cachedName="email"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[ID]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                          cachedName="ID"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Prenom]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Prenom]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                          cachedName="Prenom"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Nom]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Nom]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                          cachedName="Nom"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DateOfBirth]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[DateOfBirth]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                          cachedName="DateOfBirth"
+                          cachedDataType="date" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[adresse]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[adresse]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Adress]"
+                          cachedName="adresse"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tel]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Tel]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone]"
+                          cachedName="Tel"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[poste]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[poste]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Function]"
+                          cachedName="poste"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Genre]"
+                          name="Genre"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Genre]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                          cachedName="Genre"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Departement]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Departement]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepartmentName]"
+                          cachedName="Departement"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedCodepage="1252" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Date Embauche]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[Date Embauche]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HiringDate]"
+                          cachedName="Date Embauche"
+                          cachedDataType="date" />
+                        <inputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[isSalaried]"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output].Columns[isSalaried]"
+                          externalMetadataColumnId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalariedFlag]"
+                          cachedName="isSalaried"
+                          cachedDataType="bool" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeKey]"
+                          name="EmployeeKey"
+                          dataType="i4" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                          name="EmployeeID"
+                          dataType="str"
+                          length="10"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
+                          name="FirstName"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
+                          name="LastName"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[BirthDate]"
+                          name="BirthDate"
+                          dataType="dbTimeStamp" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Adress]"
+                          name="Adress"
+                          dataType="str"
+                          length="100"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Email]"
+                          name="Email"
+                          dataType="str"
+                          length="70"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Phone]"
+                          name="Phone"
+                          dataType="str"
+                          length="15"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Function]"
+                          name="Function"
+                          dataType="str"
+                          length="50"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                          name="Gender"
+                          dataType="wstr"
+                          length="1" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DepartmentName]"
+                          name="DepartmentName"
+                          dataType="str"
+                          length="30"
+                          codePage="1252" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[HiringDate]"
+                          name="HiringDate"
+                          dataType="dbTimeStamp" />
+                        <externalMetadataColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SalariedFlag]"
+                          name="SalariedFlag"
+                          dataType="bool" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      name="OLE DB Destination Error Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load and Clean Staging\Load Employee Task\Rows to insert"
+                  name="Rows to insert"
+                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  usesDispositions="true"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+                  <inputs>
+                    <input
+                      refId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Inputs[Derived Column Input]"
+                      name="Derived Column Input"
+                      description="Input to the Derived Column Transformation">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Outputs[Derived Column Output]"
+                      name="Derived Column Output"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Outputs[Derived Column Error Output]"
+                      name="Derived Column Error Output"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Inputs[Derived Column Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load and Clean Staging\Load Employee Task\Rows to update"
+                  name="Rows to update"
+                  componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  usesDispositions="true"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+                  <inputs>
+                    <input
+                      refId="Package\Load and Clean Staging\Load Employee Task\Rows to update.Inputs[Derived Column Input]"
+                      name="Derived Column Input"
+                      description="Input to the Derived Column Transformation">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Rows to update.Outputs[Derived Column Output]"
+                      name="Derived Column Output"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Load and Clean Staging\Load Employee Task\Rows to update.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load and Clean Staging\Load Employee Task\Rows to update.Outputs[Derived Column Error Output]"
+                      name="Derived Column Error Output"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Load and Clean Staging\Load Employee Task\Rows to update.Inputs[Derived Column Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Rows to update.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Rows to update.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load and Clean Staging\Load Employee Task\Rows to update.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Load and Clean Staging\Load Employee Task\Rows to update.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load and Clean Staging\Load Employee Task.Paths[Derived Column Output]"
+                  name="Derived Column Output"
+                  startId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Outputs[Derived Column Output]"
+                  endId="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination.Inputs[OLE DB Destination Input]" />
+                <path
+                  refId="Package\Load and Clean Staging\Load Employee Task.Paths[Flat File Source Output]"
+                  name="Flat File Source Output"
+                  startId="Package\Load and Clean Staging\Load Employee Task\Employee File Source.Outputs[Flat File Source Output]"
+                  endId="Package\Load and Clean Staging\Load Employee Task\Data Conversion.Inputs[Data Conversion Input]" />
+                <path
+                  refId="Package\Load and Clean Staging\Load Employee Task.Paths[Lookup Match Output]"
+                  name="Lookup Match Output"
+                  startId="Package\Load and Clean Staging\Load Employee Task\Lookup.Outputs[Lookup Match Output]"
+                  endId="Package\Load and Clean Staging\Load Employee Task\Rows to update.Inputs[Derived Column Input]" />
+                <path
+                  refId="Package\Load and Clean Staging\Load Employee Task.Paths[Lookup No Match Output]"
+                  name="Lookup No Match Output"
+                  startId="Package\Load and Clean Staging\Load Employee Task\Lookup.Outputs[Lookup No Match Output]"
+                  endId="Package\Load and Clean Staging\Load Employee Task\Rows to insert.Inputs[Derived Column Input]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load and Clean Staging.PrecedenceConstraints[Constraint]"
+          DTS:From="Package\Load and Clean Staging\Load Employee Task"
+          DTS:To="Package\Load and Clean Staging\Load Department Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:DTSID="{0C017F0D-9AAB-42B1-9281-5B24E2F628FF}"
+          DTS:CreationName="" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:From="Package\Load and Clean Staging"
+      DTS:To="Package\Dimensions table Sync"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:DTSID="{B30D6E5A-F4FB-4FCE-8579-EED966A202DE}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:From="Package\Dimensions table Sync"
+      DTS:To="Package\Fact table Sync"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:DTSID="{BD0ADD1E-BF6F-403B-A126-79C588679161}"
+      DTS:CreationName="" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Dimensions table Sync\Sync DimDepartment Task"
+          TopLeft="39,71" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Dimensions table Sync\Sync DimEmployee Task"
+          TopLeft="34,8" />
+        <EdgeLayout
+          Id="Package\Dimensions table Sync.PrecedenceConstraints[Constraint]"
+          TopLeft="34,29">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="5,63"
+              Start="0,0"
+              End="-2.5,63">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,59"
+                    Point2="-22.5,63"
+                    Point3="-18.5,63" />
+                  <mssgle:LineSegment
+                    End="-2.5,63" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="253,135"
+          Size="253,178"
+          Id="Package\Dimensions table Sync"
+          TopLeft="179,242" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Fact table Sync\Sync Fact HR Snapshot Task"
+          TopLeft="17,17" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="254,84"
+          Size="254,127"
+          Id="Package\Fact table Sync"
+          TopLeft="371,58" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\Load and Clean Staging\Load Department Task"
+          TopLeft="32,73" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Load and Clean Staging\Load Employee Task"
+          TopLeft="29,12" />
+        <EdgeLayout
+          Id="Package\Load and Clean Staging.PrecedenceConstraints[Constraint]"
+          TopLeft="29,33">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="3,61"
+              Start="0,0"
+              End="-4.5,61">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-18.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-18.5,0"
+                    Point2="-22.5,0"
+                    Point3="-22.5,4" />
+                  <mssgle:LineSegment
+                    End="-22.5,57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.5,57"
+                    Point2="-22.5,61"
+                    Point3="-18.5,61" />
+                  <mssgle:LineSegment
+                    End="-4.5,61" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="227,123"
+          Size="227,166"
+          Id="Package\Load and Clean Staging"
+          TopLeft="37,31" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="150.5,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="114.166666666667,45"
+              Start="0,0"
+              End="114.166666666667,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8303220738413" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.8303220738413"
+                    Point2="0,26.8303220738413"
+                    Point3="4,26.8303220738413" />
+                  <mssgle:LineSegment
+                    End="110.166666666667,26.8303220738413" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.166666666667,26.8303220738413"
+                    Point2="114.166666666667,26.8303220738413"
+                    Point3="114.166666666667,30.8303220738413" />
+                  <mssgle:LineSegment
+                    End="114.166666666667,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="346.333333333333,242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="151.666666666667,-57"
+              Start="0,0"
+              End="151.666666666667,-49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-19.0149253731343" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-19.0149253731343"
+                    Point2="0,-23.0149253731343"
+                    Point3="4,-23.0149253731343" />
+                  <mssgle:LineSegment
+                    End="147.666666666667,-23.0149253731343" />
+                  <mssgle:CubicBezierSegment
+                    Point1="147.666666666667,-23.0149253731343"
+                    Point2="151.666666666667,-23.0149253731343"
+                    Point3="151.666666666667,-27.0149253731343" />
+                  <mssgle:LineSegment
+                    End="151.666666666667,-49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load and Clean Staging\Load Employee Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="112,42"
+          Id="Package\Load and Clean Staging\Load Employee Task\Lookup"
+          TopLeft="234,101" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Load and Clean Staging\Load Employee Task\Employee File Source"
+          TopLeft="200,25" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Load and Clean Staging\Load Employee Task\Rows to update"
+          TopLeft="87,189" />
+        <EdgeLayout
+          Id="Package\Load and Clean Staging\Load Employee Task.Paths[Lookup Match Output]"
+          TopLeft="272.666666666667,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-109.666666666667,46"
+              Start="0,0"
+              End="-109.666666666667,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.7887323943662" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7887323943662"
+                    Point2="0,18.7887323943662"
+                    Point3="-4,18.7887323943662" />
+                  <mssgle:LineSegment
+                    End="-105.666666666667,18.7887323943662" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-105.666666666667,18.7887323943662"
+                    Point2="-109.666666666667,18.7887323943662"
+                    Point3="-109.666666666667,22.7887323943662" />
+                  <mssgle:LineSegment
+                    End="-109.666666666667,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-103.024720052083,23.7887323943662,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Load and Clean Staging\Load Employee Task\Rows to insert"
+          TopLeft="353,194" />
+        <EdgeLayout
+          Id="Package\Load and Clean Staging\Load Employee Task.Paths[Lookup No Match Output]"
+          TopLeft="307.333333333333,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="118.166666666667,51"
+              Start="0,0"
+              End="118.166666666667,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.830985915493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.830985915493"
+                    Point2="0,20.830985915493"
+                    Point3="4,20.830985915493" />
+                  <mssgle:LineSegment
+                    End="114.166666666667,20.830985915493" />
+                  <mssgle:CubicBezierSegment
+                    Point1="114.166666666667,20.830985915493"
+                    Point2="118.166666666667,20.830985915493"
+                    Point3="118.166666666667,24.830985915493" />
+                  <mssgle:LineSegment
+                    End="118.166666666667,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="3.27694661458334,25.830985915493,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination"
+          TopLeft="355,267" />
+        <EdgeLayout
+          Id="Package\Load and Clean Staging\Load Employee Task.Paths[Derived Column Output]"
+          TopLeft="425.5,236">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.5,31"
+              Start="0,0"
+              End="14.5,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="4,15.5" />
+                  <mssgle:LineSegment
+                    End="10.5,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.5,15.5"
+                    Point2="14.5,15.5"
+                    Point3="14.5,19.5" />
+                  <mssgle:LineSegment
+                    End="14.5,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-0.75,20.5,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Load and Clean Staging\Load Employee Task\Data Conversion"
+          TopLeft="393,69" />
+        <EdgeLayout
+          Id="Package\Load and Clean Staging\Load Employee Task.Paths[Flat File Source Output]"
+          TopLeft="378,46">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.5,23"
+              Start="0,0"
+              End="92.5,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="88.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.5,0"
+                    Point2="92.5,0"
+                    Point3="92.5,4" />
+                  <mssgle:LineSegment
+                    End="92.5,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load and Clean Staging\Load Employee Task\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load and Clean Staging\Load Employee Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

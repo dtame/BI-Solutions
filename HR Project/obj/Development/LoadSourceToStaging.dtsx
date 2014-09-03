@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="LIGHTOFGOD"
   DTS:CreationDate="7/29/2014 11:45:52 PM"
   DTS:PackageType="5"
-  DTS:VersionBuild="150"
-  DTS:VersionGUID="{3E4249C5-B0C5-452D-9519-D0E16BA6D1CF}"
+  DTS:VersionBuild="157"
+  DTS:VersionGUID="{6AE62C8F-D44D-407C-B11C-DB6C02CE7620}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadSourceToStaging"
@@ -472,10 +472,10 @@
                       description="The SQL command to be executed."
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
                       expressionType="Notify">UPDATE [DWHRTracker].[dbo].[RejectEmp]
-  SET ErrorColumn = -1 
+  SET ErrorCode = -1 ,  ErrorColumn = -1
   FROM [DWHRTracker].[dbo].[RejectEmp]
   WHERE empID = ?
-  AND ErrorColumn IS NULL</property>
+</property>
                     <property
                       name="DefaultCodePage"
                       dataType="System.Int32"
@@ -2856,6 +2856,81 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               version="1">
               <components>
                 <component
+                  refId="Package\Loading Sequence\Load Employee Source Task\Data Conversion"
+                  name="Data Conversion"
+                  componentClassID="{62B1106C-7DB8-4EC8-ADD6-4C664DFFC54A}"
+                  description="Data Conversion"
+                  usesDispositions="true"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0">
+                  <inputs>
+                    <input
+                      refId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Inputs[Data Conversion Input].Columns[Active]"
+                          lineageId="Package\Loading Sequence\Load Employee Source Task\DM Flat File Source.Outputs[Flat File Source Output].Columns[Active]"
+                          cachedName="Active"
+                          cachedDataType="i1" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Outputs[Data Conversion Output]"
+                      name="Data Conversion Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Outputs[Data Conversion Output].Columns[Active]"
+                          name="Active"
+                          lineageId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Outputs[Data Conversion Output].Columns[Active]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              name="SourceInputColumnLineageID"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              containsID="true">#{Package\Loading Sequence\Load Employee Source Task\DM Flat File Source.Outputs[Flat File Source Output].Columns[Active]}</property>
+                            <property
+                              name="FastParse"
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines.">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                      name="Data Conversion Error Output"
+                      exclusionGroup="1"
+                      synchronousInputId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Inputs[Data Conversion Input]"
+                      isErrorOut="true">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          lineageId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          lineageId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Loading Sequence\Load Employee Source Task\DM Flat File Source"
                   name="DM Flat File Source"
                   componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
@@ -2884,8 +2959,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   <outputs>
                     <output
                       refId="Package\Loading Sequence\Load Employee Source Task\DM Flat File Source.Outputs[Flat File Source Output]"
-                      name="Flat File Source Output"
-                      isSorted="true">
+                      name="Flat File Source Output">
                       <outputColumns>
                         <outputColumn
                           refId="Package\Loading Sequence\Load Employee Source Task\DM Flat File Source.Outputs[Flat File Source Output].Columns[ID]"
@@ -3352,9 +3426,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           cachedLength="10"
                           cachedCodepage="1252" />
                         <inputColumn
-                          refId="Package\Loading Sequence\Load Employee Source Task\Merge Join.Inputs[Merge Join Left Input].Columns[Active]"
-                          lineageId="Package\Loading Sequence\Load Employee Source Task\Sort.Outputs[Sort Output].Columns[Active]"
-                          cachedName="Active"
+                          refId="Package\Loading Sequence\Load Employee Source Task\Merge Join.Inputs[Merge Join Left Input].Columns[DM Flat File Source.Active]"
+                          lineageId="Package\Loading Sequence\Load Employee Source Task\Sort.Outputs[Sort Output].Columns[DM Flat File Source.Active]"
+                          cachedName="DM Flat File Source.Active"
                           cachedDataType="i1" />
                       </inputColumns>
                       <externalMetadataColumns />
@@ -3554,7 +3628,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                               name="InputColumnID"
                               dataType="System.Int32"
                               description="The input column associated with this output column"
-                              containsID="true">#{Package\Loading Sequence\Load Employee Source Task\Merge Join.Inputs[Merge Join Left Input].Columns[Active]}</property>
+                              containsID="true">#{Package\Loading Sequence\Load Employee Source Task\Merge Join.Inputs[Merge Join Left Input].Columns[DM Flat File Source.Active]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -3883,8 +3957,7 @@ ORDER BY empID</property>
                   <outputs>
                     <output
                       refId="Package\Loading Sequence\Load Employee Source Task\OLE DB Source.Outputs[OLE DB Source Output]"
-                      name="OLE DB Source Output"
-                      isSorted="true">
+                      name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
                           refId="Package\Loading Sequence\Load Employee Source Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[empID]"
@@ -4589,9 +4662,9 @@ ORDER BY empID</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Loading Sequence\Load Employee Source Task\Sort.Outputs[Sort Output].Columns[Active]"
-                          name="Active"
-                          lineageId="Package\Loading Sequence\Load Employee Source Task\Sort.Outputs[Sort Output].Columns[Active]"
+                          refId="Package\Loading Sequence\Load Employee Source Task\Sort.Outputs[Sort Output].Columns[DM Flat File Source.Active]"
+                          name="DM Flat File Source.Active"
+                          lineageId="Package\Loading Sequence\Load Employee Source Task\Sort.Outputs[Sort Output].Columns[DM Flat File Source.Active]"
                           dataType="i1">
                           <properties>
                             <property
@@ -5032,10 +5105,15 @@ ORDER BY empID</property>
               </components>
               <paths>
                 <path
+                  refId="Package\Loading Sequence\Load Employee Source Task.Paths[Data Conversion Output]"
+                  name="Data Conversion Output"
+                  startId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Outputs[Data Conversion Output]"
+                  endId="Package\Loading Sequence\Load Employee Source Task\Sort.Inputs[Sort Input]" />
+                <path
                   refId="Package\Loading Sequence\Load Employee Source Task.Paths[Flat File Source Output]"
                   name="Flat File Source Output"
                   startId="Package\Loading Sequence\Load Employee Source Task\DM Flat File Source.Outputs[Flat File Source Output]"
-                  endId="Package\Loading Sequence\Load Employee Source Task\Sort.Inputs[Sort Input]" />
+                  endId="Package\Loading Sequence\Load Employee Source Task\Data Conversion.Inputs[Data Conversion Input]" />
                 <path
                   refId="Package\Loading Sequence\Load Employee Source Task.Paths[Merge Join Output]"
                   name="Merge Join Output"
@@ -5343,7 +5421,7 @@ namespace ST_be2b13ad26bc4c1198eb4f0d099267a4
 		{
 			// TODO: Add your code here
             String sender = "mdtame@gmail.com";
-            String recever = "d_tamo@yahoo.fr";//"yazid.grim@montrealcollege.ca";
+            String recever = "dominique@tame.ca";//"yazid.grim@montrealcollege.ca";
             String smtp = "smtp.gmail.com";
             String body = "Bonjour, \n rapport de chargement de la source de donnees employes: \n ";
 
@@ -5396,15 +5474,15 @@ namespace ST_be2b13ad26bc4c1198eb4f0d099267a4
 	<msb:PropertyGroup>
 		<msb:CodeName>ST_be2b13ad26bc4c1198eb4f0d099267a4</msb:CodeName>
 		<msb:DisplayName>ST_be2b13ad26bc4c1198eb4f0d099267a4</msb:DisplayName>
-		<msb:Language>msBuild</msb:Language>
 		<msb:ProjectId>{8AFD1C81-47F7-4CCA-9CD0-EBA27208C635}</msb:ProjectId>
+		<msb:Language>msBuild</msb:Language>
 	</msb:PropertyGroup>
 	<msb:ItemGroup>
 		<msb:Project Include="ST_be2b13ad26bc4c1198eb4f0d099267a4.csproj"/>
 		<msb:File Include="Properties\AssemblyInfo.cs"/>
 		<msb:File Include="Properties\Resources.resx"/>
-		<msb:File Include="Properties\Resources.Designer.cs"/>
 		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
 		<msb:File Include="Properties\Settings.settings"/>
 		<msb:File Include="ScriptMain.cs"/>
 	</msb:ItemGroup>
@@ -5602,29 +5680,29 @@ namespace ST_be2b13ad26bc4c1198eb4f0d099267a4.Properties {
           <BinaryItem
             Name="ST_be2b13ad26bc4c1198eb4f0d099267a4.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDACwb5VMAAAAAAAAAAOAAAiELAQsAABQAAAAIAAAAAAAAjjMA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAAWe7VMAAAAAAAAAAOAAAiELAQsAABQAAAAIAAAAAAAAjjMA
 AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
-ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAADwzAABPAAAAAEAAAAgEAAAAAAAAAAAAAAAAAAAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAEAzAABLAAAAAEAAAAgEAAAAAAAAAAAAAAAAAAAA
 AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAlBMAAAAgAAAAFAAAAAIA
 AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAAgEAAAAQAAAAAYAAAAWAAAAAAAAAAAAAAAAAABAAABA
 LnJlbG9jAAAMAAAAAGAAAAACAAAAHAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABw
-MwAAAAAAAEgAAAACAAUAGCMAACQQAAABAAAAAAAAAGAiAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+MwAAAAAAAEgAAAACAAUAGCMAACgQAAABAAAAAAAAAGAiAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKA4AAAoqEzACAC0AAAABAAARfgEAAAQtIHIBAABw0AIA
 AAIoDwAACm8QAAAKcxEAAAoKBoABAAAEfgEAAAQqGn4CAAAEKh4CgAIAAAQqGn4DAAAEKi5zBgAA
-BoADAAAEKh4CKBQAAAoqABMwAwCKAQAAAgAAEXJzAABwCnKVAABwC3K1AABwDHLTAABwDQIoFgAA
-Cm8XAAAKcmABAHBvGAAACm8ZAAAKpR4AAAETBAIoFgAACm8XAAAKcogBAHBvGAAACm8ZAAAKpR4A
-AAETBQIoFgAACm8XAAAKcrABAHBvGAAACm8ZAAAKpR4AAAETBgIoFgAACm8XAAAKctwBAHBvGAAA
-Cm8ZAAAKpR4AAAETBwIoFgAACm8XAAAKcggCAHBvGAAACm8ZAAAKpR4AAAETCAlyOAIAcBEEjB4A
-AAEoGgAACg0JcnoCAHARBYweAAABKBoAAAoNCXKyAgBwEQaMHgAAASgaAAAKDQly5AIAcBEIjB4A
-AAEoGgAACg0JchoDAHARB4weAAABKBoAAAoNBgdzGwAAChMJEQkJbxwAAAoRCXJWAwBwbx0AAAoI
-IEsCAABzHgAAChMKEQoXbx8AAAoRChZvIAAACgZyjAMAcHMhAAAKEwsRChZvIAAAChEKEQtvIgAA
+BoADAAAEKh4CKBQAAAoqABMwAwCKAQAAAgAAEXJzAABwCnKVAABwC3K5AABwDHLXAABwDQIoFgAA
+Cm8XAAAKcmQBAHBvGAAACm8ZAAAKpR4AAAETBAIoFgAACm8XAAAKcowBAHBvGAAACm8ZAAAKpR4A
+AAETBQIoFgAACm8XAAAKcrQBAHBvGAAACm8ZAAAKpR4AAAETBgIoFgAACm8XAAAKcuABAHBvGAAA
+Cm8ZAAAKpR4AAAETBwIoFgAACm8XAAAKcgwCAHBvGAAACm8ZAAAKpR4AAAETCAlyPAIAcBEEjB4A
+AAEoGgAACg0Jcn4CAHARBYweAAABKBoAAAoNCXK2AgBwEQaMHgAAASgaAAAKDQly6AIAcBEIjB4A
+AAEoGgAACg0Jch4DAHARB4weAAABKBoAAAoNBgdzGwAAChMJEQkJbxwAAAoRCXJaAwBwbx0AAAoI
+IEsCAABzHgAAChMKEQoXbx8AAAoRChZvIAAACgZykAMAcHMhAAAKEwsRChZvIAAAChEKEQtvIgAA
 ChEKEQlvIwAACgIoFgAAChZvJAAACioeAiglAAAKKgAAAAAAALQAAADOyu++AQAAAJEAAABsU3lz
 dGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwg
 Q3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5S
 ZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAABCU0pCAQAB
 AAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAAAYBAAAI34AAIQEAABgBgAAI1N0cmluZ3MAAAAA
-5AoAAJwDAAAjVVMAgA4AABAAAAAjR1VJRAAAAJAOAACUAQAAI0Jsb2IAAAAAAAAAAgAAAVcdogEJ
+5AoAAKADAAAjVVMAhA4AABAAAAAjR1VJRAAAAJQOAACUAQAAI0Jsb2IAAAAAAAAAAgAAAVcdogEJ
 AwAAAPolMwAWAAABAAAAIwAAAAUAAAAGAAAACQAAAAEAAAAlAAAAAgAAAA8AAAACAAAAAgAAAAMA
 AAAEAAAAAQAAAAQAAAABAAAAAQAAAAAACgABAAAAAAAGAMEAugAKAN0AyAAOAD0BFAEGAFkBugAG
 AG8BXgEGAKABiwEGAFcCPQIGAIICcAIGAJkCcAIGALYCcAIGANUCcAIGAO4CcAIGAAcDcAIGACID
@@ -5641,7 +5719,7 @@ BZ0A+QBeBaEAAQG8AagAAQGBBVgAAQGKBVgACQG8Aa4ACQGhBbQACQGvBbQAEQG8AagACQH5BbkA
 CQEJBsAA2QAOBl0AGQC8ARsACAAUAE4ACAAYAFMAKQCTAIAALgAbAE0BLgAjAE0BLgBjAHMBLgAL
 ANwALgATACQBLgAzACQBLgArAE0BLgA7AFMBLgBDAE0BLgBbAGoBQwBrAFMASQCTAIAAYQCbAFMA
 gwCrAFMAdQDHAAIAAQADAAMAAABvAS8AAADuATQAAAASAkIAAgACAAMAAgADAAUAAQAEAAUAAgAF
-AAcABIAAAAEAAADVFOZZAAAAAAAAfwAAAAQAAAAAAAAAAAAAAAEAsQAAAAAABAAAAAAAAAAAAAAA
+AAcABIAAAAEAAADbFNKmAAAAAAAAfwAAAAQAAAAAAAAAAAAAAAEAsQAAAAAABAAAAAAAAAAAAAAA
 AQC6AAAAAAALAAAAAAAAAAAAAAAKAPUAAAAAAAsAAAAAAAAAAAAAAAoA3gQAAAAAAAAAAAEAAAAd
 BgAABQAEAAAAADxNb2R1bGU+AFNUX2JlMmIxM2FkMjZiYzRjMTE5OGViNGYwZDA5OTI2N2E0LmRs
 bABSZXNvdXJjZXMAU1RfYmUyYjEzYWQyNmJjNGMxMTk4ZWI0ZjBkMDk5MjY3YTQuUHJvcGVydGll
@@ -5674,40 +5752,40 @@ ZXRfQ3JlZGVudGlhbHMAU2VuZABzZXRfVGFza1Jlc3VsdABTVF9iZTJiMTNhZDI2YmM0YzExOThl
 YjRmMGQwOTkyNjdhNC5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMAAHFTAFQAXwBiAGUA
 MgBiADEAMwBhAGQAMgA2AGIAYwA0AGMAMQAxADkAOABlAGIANABmADAAZAAwADkAOQAyADYANwBh
 ADQALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAACFtAGQAdABhAG0A
-ZQBAAGcAbQBhAGkAbAAuAGMAbwBtAAAfZABfAHQAYQBtAG8AQAB5AGEAaABvAG8ALgBmAHIAAB1z
-AG0AdABwAC4AZwBtAGEAaQBsAC4AYwBvAG0AAICLQgBvAG4AagBvAHUAcgAsACAACgAgAHIAYQBw
-AHAAbwByAHQAIABkAGUAIABjAGgAYQByAGcAZQBtAGUAbgB0ACAAZABlACAAbABhACAAcwBvAHUA
-cgBjAGUAIABkAGUAIABkAG8AbgBuAGUAZQBzACAAZQBtAHAAbABvAHkAZQBzADoAIAAKACAAACdV
-AHMAZQByADoAOgBOAHUAbQBiAGUAcgBEAGUAZgBhAHUAbAB0AAAnVQBzAGUAcgA6ADoATgB1AG0A
-YgBlAHIAQQBkAHIATgB1AGwAbAAAK1UAcwBlAHIAOgA6AE4AdQBtAGIAZQByAEUAbQBhAGkAbABO
-AHUAbABsAAArVQBzAGUAcgA6ADoATgB1AG0AYgBlAHIAVABlAGwARgBvAHIAbQBhAHQAAC9VAHMA
-ZQByADoAOgBOAHUAbQBiAGUAcgBFAG0AYQBpAGwARgBvAHIAbQBhAHQAAEEKACAAaQBuAGYAbwBy
-AG0AYQB0AGkAbwBuAHMAIABlAG0AcABsAG8AeQBlACAAdgBhAGwAaQBkAGUAcwA6ACAAADcKACAA
-QQBkAHIAZQBzAHMAZQAoAHMAKQAgAG0AYQBuAHEAdQBhAG4AdABlACgAcwApADoAIAAAMQoAIABF
-AG0AYQBpAGwAKABzACkAIABtAGEAbgBxAHUAYQBuAHQAKABzACkAOgAgAAA1CgAgAEYAbwByAG0A
-YQB0ACAARQBtAGEAaQBsACAASQBuAGMAbwByAHIAZQBjAHQAOgAgAAA7CgAgAEYAbwByAG0AYQB0
-ACAAVABlAGwAZQBwAGgAbwBuAGUAIABpAG4AdgBhAGwAaQBkAGUAOgAgAAA1UgBhAHAAcABvAHIA
-dAAgAGMAaABhAHIAZwBlAG0AZQBuAHQAIABlAG0AcABsAG8AeQBlAAANZABvAG0AbgBpAGsAAAAA
-BTxnZhG6Yky3vlGV7iRxPwAIt3pcVhk04IkIiYRdzYCAzJEDBhIVAwYSGQMgAAEEAAASFQQAABIZ
-BQABARIZBAgAEhUECAASGQMGEgwEAAASDAQIABIMAgYIAwYRFAQAAAAABAEAAAAEIAEBDgQgAQEI
-BgABElERVQQgABJZBiACAQ4SWQQHARIVBSABARFhCAEAAgAAAAAAAwAAAQQgABJtBCAAEnEFIAES
-dRwDIAAcBgADDhwcHAUgAgEODgUgAgEOCAQgAQECBiABARKAjQYgAQESgIEUBwwODg4OCAgICAgS
-gIESgIUSgIlHAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjABAFQOFEZyYW1ld29ya0Rpc3Bs
-YXlOYW1lEC5ORVQgRnJhbWV3b3JrIDQoAQAjU1RfYmUyYjEzYWQyNmJjNGMxMTk4ZWI0ZjBkMDk5
-MjY3YTQAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxNAAACAEACAAAAAAAHgEAAQBUAhZXcmFw
-Tm9uRXhjZXB0aW9uVGhyb3dzAQAAZDMAAAAAAAAAAAAAfjMAAAAgAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAHAzAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAA
+ZQBAAGcAbQBhAGkAbAAuAGMAbwBtAAAjZABvAG0AaQBuAGkAcQB1AGUAQAB0AGEAbQBlAC4AYwBh
+AAAdcwBtAHQAcAAuAGcAbQBhAGkAbAAuAGMAbwBtAACAi0IAbwBuAGoAbwB1AHIALAAgAAoAIABy
+AGEAcABwAG8AcgB0ACAAZABlACAAYwBoAGEAcgBnAGUAbQBlAG4AdAAgAGQAZQAgAGwAYQAgAHMA
+bwB1AHIAYwBlACAAZABlACAAZABvAG4AbgBlAGUAcwAgAGUAbQBwAGwAbwB5AGUAcwA6ACAACgAg
+AAAnVQBzAGUAcgA6ADoATgB1AG0AYgBlAHIARABlAGYAYQB1AGwAdAAAJ1UAcwBlAHIAOgA6AE4A
+dQBtAGIAZQByAEEAZAByAE4AdQBsAGwAACtVAHMAZQByADoAOgBOAHUAbQBiAGUAcgBFAG0AYQBp
+AGwATgB1AGwAbAAAK1UAcwBlAHIAOgA6AE4AdQBtAGIAZQByAFQAZQBsAEYAbwByAG0AYQB0AAAv
+VQBzAGUAcgA6ADoATgB1AG0AYgBlAHIARQBtAGEAaQBsAEYAbwByAG0AYQB0AABBCgAgAGkAbgBm
+AG8AcgBtAGEAdABpAG8AbgBzACAAZQBtAHAAbABvAHkAZQAgAHYAYQBsAGkAZABlAHMAOgAgAAA3
+CgAgAEEAZAByAGUAcwBzAGUAKABzACkAIABtAGEAbgBxAHUAYQBuAHQAZQAoAHMAKQA6ACAAADEK
+ACAARQBtAGEAaQBsACgAcwApACAAbQBhAG4AcQB1AGEAbgB0ACgAcwApADoAIAAANQoAIABGAG8A
+cgBtAGEAdAAgAEUAbQBhAGkAbAAgAEkAbgBjAG8AcgByAGUAYwB0ADoAIAAAOwoAIABGAG8AcgBt
+AGEAdAAgAFQAZQBsAGUAcABoAG8AbgBlACAAaQBuAHYAYQBsAGkAZABlADoAIAAANVIAYQBwAHAA
+bwByAHQAIABjAGgAYQByAGcAZQBtAGUAbgB0ACAAZQBtAHAAbABvAHkAZQAADWQAbwBtAG4AaQBr
+AAAAAK4MozC2MGdNow4TXmIvTzkACLd6XFYZNOCJCImEXc2AgMyRAwYSFQMGEhkDIAABBAAAEhUE
+AAASGQUAAQESGQQIABIVBAgAEhkDBhIMBAAAEgwECAASDAIGCAMGERQEAAAAAAQBAAAABCABAQ4E
+IAEBCAYAARJREVUEIAASWQYgAgEOElkEBwESFQUgAQERYQgBAAIAAAAAAAMAAAEEIAASbQQgABJx
+BSABEnUcAyAAHAYAAw4cHBwFIAIBDg4FIAIBDggEIAEBAgYgAQESgI0GIAEBEoCBFAcMDg4ODggI
+CAgIEoCBEoCFEoCJRwEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC4wAQBUDhRGcmFtZXdvcmtE
+aXNwbGF5TmFtZRAuTkVUIEZyYW1ld29yayA0KAEAI1NUX2JlMmIxM2FkMjZiYzRjMTE5OGViNGYw
+ZDA5OTI2N2E0AAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMTQAAAgBAAgAAAAAAB4BAAEAVAIW
+V3JhcE5vbkV4Y2VwdGlvblRocm93cwEAAGgzAAAAAAAAAAAAAH4zAAAAIAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAABwMwAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAA
 SAAAAFhAAACwAwAAAAAAAAAAAACwAzQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAA
-AAAAvQTv/gAAAQAAAAEA5lnVFAAAAQDmWdUUPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
+AAAAvQTv/gAAAQAAAAEA0qbbFAAAAQDSptsUPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQA
 AAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBu
 AAAAAAAAALAEEAMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAA7AIAAAEAMAAwADAA
 MAAwADQAYgAwAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAVABf
 AGIAZQAyAGIAMQAzAGEAZAAyADYAYgBjADQAYwAxADEAOQA4AGUAYgA0AGYAMABkADAAOQA5ADIA
-NgA3AGEANAAAAEAADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA1ADMAMwAz
-AC4AMgAzADAAMQA0AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfAGIA
+NgA3AGEANAAAAEAADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA1ADMAMwA5
+AC4ANAAyADcAMAA2AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfAGIA
 ZQAyAGIAMQAzAGEAZAAyADYAYgBjADQAYwAxADEAOQA4AGUAYgA0AGYAMABkADAAOQA5ADIANgA3
 AGEANAAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAA
 eQByAGkAZwBoAHQAIABAACAAIAAyADAAMQA0AAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBs
@@ -5715,8 +5793,8 @@ AGUAbgBhAG0AZQAAAFMAVABfAGIAZQAyAGIAMQAzAGEAZAAyADYAYgBjADQAYwAxADEAOQA4AGUA
 YgA0AGYAMABkADAAOQA5ADIANgA3AGEANAAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABO
 AGEAbQBlAAAAAABTAFQAXwBiAGUAMgBiADEAMwBhAGQAMgA2AGIAYwA0AGMAMQAxADkAOABlAGIA
 NABmADAAZAAwADkAOQAyADYANwBhADQAAABEAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBv
-AG4AAAAxAC4AMAAuADUAMwAzADMALgAyADMAMAAxADQAAAAAAEgADwABAEEAcwBzAGUAbQBiAGwA
-eQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADUAMwAzADMALgAyADMAMAAxADQAAAAAAAAAAAAA
+AG4AAAAxAC4AMAAuADUAMwAzADkALgA0ADIANwAwADYAAAAAAEgADwABAEEAcwBzAGUAbQBiAGwA
+eQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADUAMwAzADkALgA0ADIANwAwADYAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -5772,10 +5850,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="210,42"
           Id="Package\Loading Sequence\Load Employee Source Task"
-          TopLeft="44,85" />
+          TopLeft="45,85" />
         <EdgeLayout
           Id="Package\Loading Sequence.PrecedenceConstraints[Constraint]"
-          TopLeft="151.75,127">
+          TopLeft="152.25,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5797,7 +5875,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loading Sequence.PrecedenceConstraints[Constraint 2]"
-          TopLeft="148.25,51">
+          TopLeft="148.75,51">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6098,127 +6176,83 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <NodeLayout
           Size="170,42"
           Id="Package\Loading Sequence\Load Employee Source Task\OLE DB Destination"
-          TopLeft="194,266" />
+          TopLeft="181,380" />
         <NodeLayout
           Size="149,42"
           Id="Package\Loading Sequence\Load Employee Source Task\OLE DB Source"
           TopLeft="301,37" />
         <NodeLayout
-          Size="129,42"
-          Id="Package\Loading Sequence\Load Employee Source Task\Merge Join"
-          TopLeft="216,182" />
-        <NodeLayout
           Size="102,42"
           Id="Package\Loading Sequence\Load Employee Source Task\Sort"
-          TopLeft="122,105" />
-        <EdgeLayout
-          Id="Package\Loading Sequence\Load Employee Source Task.Paths[Flat File Source Output]"
-          TopLeft="176.25,78">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27"
-              Start="0,0"
-              End="0,19.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Loading Sequence\Load Employee Source Task.Paths[Sort Output1]"
-          TopLeft="173,147">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="87.3333333333333,35"
-              Start="0,0"
-              End="87.3333333333333,27.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.7427258805513" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.7427258805513"
-                    Point2="0,20.7427258805513"
-                    Point3="4,20.7427258805513" />
-                  <mssgle:LineSegment
-                    End="83.3333333333333,20.7427258805513" />
-                  <mssgle:CubicBezierSegment
-                    Point1="83.3333333333333,20.7427258805513"
-                    Point2="87.3333333333333,20.7427258805513"
-                    Point3="87.3333333333333,24.7427258805513" />
-                  <mssgle:LineSegment
-                    End="87.3333333333333,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Loading Sequence\Load Employee Source Task.Paths[Merge Join Output]"
-          TopLeft="279.75,224">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="121,209" />
         <NodeLayout
           Size="106,42"
           Id="Package\Loading Sequence\Load Employee Source Task\Sort 1"
-          TopLeft="335,105" />
+          TopLeft="307,110" />
         <EdgeLayout
           Id="Package\Loading Sequence\Load Employee Source Task.Paths[OLE DB Source Output]"
           TopLeft="375.5,79">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12.5,26"
+              EndConnector="-15.5,31"
               Start="0,0"
-              End="12.5,18.5">
+              End="-15.5,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9" />
+                    End="0,11.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9"
-                    Point2="0,13"
-                    Point3="4,13" />
+                    Point1="0,11.5"
+                    Point2="0,15.5"
+                    Point3="-4,15.5" />
                   <mssgle:LineSegment
-                    End="8.5,13" />
+                    End="-11.5,15.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="8.5,13"
-                    Point2="12.5,13"
-                    Point3="12.5,17" />
+                    Point1="-11.5,15.5"
+                    Point2="-15.5,15.5"
+                    Point3="-15.5,19.5" />
                   <mssgle:LineSegment
-                    End="12.5,18.5" />
+                    End="-15.5,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Loading Sequence\Load Employee Source Task\Merge Join"
+          TopLeft="201,302" />
+        <EdgeLayout
+          Id="Package\Loading Sequence\Load Employee Source Task.Paths[Sort Output1]"
+          TopLeft="172,251">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.3333333333333,51"
+              Start="0,0"
+              End="73.3333333333333,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2251148545176" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2251148545176"
+                    Point2="0,30.2251148545176"
+                    Point3="4,30.2251148545176" />
+                  <mssgle:LineSegment
+                    End="69.3333333333333,30.2251148545176" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.3333333333333,30.2251148545176"
+                    Point2="73.3333333333333,30.2251148545176"
+                    Point3="73.3333333333333,34.2251148545176" />
+                  <mssgle:LineSegment
+                    End="73.3333333333333,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6229,30 +6263,124 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Loading Sequence\Load Employee Source Task.Paths[Sort Output]"
-          TopLeft="388,147">
+          TopLeft="360,152">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-87.3333333333334,35"
+              EndConnector="-74.3333333333334,150"
               Start="0,0"
-              End="-87.3333333333334,27.5">
+              End="-74.3333333333334,142.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.7427258805513" />
+                    End="0,84.8973966309341" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.7427258805513"
-                    Point2="0,20.7427258805513"
-                    Point3="-4,20.7427258805513" />
+                    Point1="0,84.8973966309341"
+                    Point2="0,88.8973966309341"
+                    Point3="-4,88.8973966309341" />
                   <mssgle:LineSegment
-                    End="-83.3333333333334,20.7427258805513" />
+                    End="-70.3333333333334,88.8973966309341" />
                   <mssgle:CubicBezierSegment
-                    Point1="-83.3333333333334,20.7427258805513"
-                    Point2="-87.3333333333334,20.7427258805513"
-                    Point3="-87.3333333333334,24.7427258805513" />
+                    Point1="-70.3333333333334,88.8973966309341"
+                    Point2="-74.3333333333334,88.8973966309341"
+                    Point3="-74.3333333333334,92.8973966309341" />
                   <mssgle:LineSegment
-                    End="-87.3333333333334,27.5" />
+                    End="-74.3333333333334,142.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading Sequence\Load Employee Source Task.Paths[Merge Join Output]"
+          TopLeft="265.75,344">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Loading Sequence\Load Employee Source Task\Data Conversion"
+          TopLeft="84,116" />
+        <EdgeLayout
+          Id="Package\Loading Sequence\Load Employee Source Task.Paths[Flat File Source Output]"
+          TopLeft="179.5,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18,38"
+              Start="0,0"
+              End="-18,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="-4,19" />
+                  <mssgle:LineSegment
+                    End="-14,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14,19"
+                    Point2="-18,19"
+                    Point3="-18,23" />
+                  <mssgle:LineSegment
+                    End="-18,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loading Sequence\Load Employee Source Task.Paths[Data Conversion Output]"
+          TopLeft="161.5,158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.5,51"
+              Start="0,0"
+              End="10.5,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.5"
+                    Point2="0,25.5"
+                    Point3="4,25.5" />
+                  <mssgle:LineSegment
+                    End="6.5,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.5,25.5"
+                    Point2="10.5,25.5"
+                    Point3="10.5,29.5" />
+                  <mssgle:LineSegment
+                    End="10.5,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
