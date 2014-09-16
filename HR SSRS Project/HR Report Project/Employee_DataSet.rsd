@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DW_HR</DataSourceReference>
+      <CommandText>SELECT 
+[EmpKey] = hr.[EmployeeKey]
+,[gender]
+,[DepartmentName]
+,[HiringDate]
+,datediff(DAY, [HiringDate], GETDATE()) / (365.23076923074) as 'Seniority(Yrs)'
+FROM [dbo].[FactHRSnapshot] AS hr
+JOIN [dbo].[DimEmployee] AS emp
+ON emp.EmployeeKey = hr.EmployeeKey</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="EmpKey">
+        <DataField>EmpKey</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="gender">
+        <DataField>gender</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="DepartmentName">
+        <DataField>DepartmentName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="HiringDate">
+        <DataField>HiringDate</DataField>
+        <rd:TypeName>System.DateTime</rd:TypeName>
+      </Field>
+      <Field Name="Seniority_Yrs_">
+        <DataField>Seniority(Yrs)</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

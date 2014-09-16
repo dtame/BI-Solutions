@@ -1,15 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "HR Project", "HR Project\HR Project.dtproj", "{349373F2-C6DB-4444-9E41-B76BDBE8056A}"
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "HR_SSAS_Project", "HR_SSAS_Project.dwproj", "{65B0C4DA-B590-4433-AF4D-678F5379903F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{349373F2-C6DB-4444-9E41-B76BDBE8056A}.Development|Default.ActiveCfg = Development
-		{349373F2-C6DB-4444-9E41-B76BDBE8056A}.Development|Default.Build.0 = Development
+		{65B0C4DA-B590-4433-AF4D-678F5379903F}.Development|Default.ActiveCfg = Development
+		{65B0C4DA-B590-4433-AF4D-678F5379903F}.Development|Default.Build.0 = Development
+		{65B0C4DA-B590-4433-AF4D-678F5379903F}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

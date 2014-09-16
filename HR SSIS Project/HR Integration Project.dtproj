@@ -15,7 +15,7 @@
       <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithUserKey" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
         <SSIS:Properties>
           <SSIS:Property SSIS:Name="ID">{2b78aee9-a98c-439e-a972-b7f51872d113}</SSIS:Property>
-          <SSIS:Property SSIS:Name="Name">HR Project</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">HR Integration Project</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMajor">2</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
           <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">LIGHTOFGOD</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA77M22j+c2k64Aa4TrtnxPgAAAAACAAAAAAAQZgAAAAEAACAAAACav9e2hWPPWM00hrhOkT+9r2f+0FWbMCC3znctAyCw7AAAAAAOgAAAAAIAACAAAADSheX7ZGIk1gdGmNtm3+MbkqX6Jxf8oBFRTZwlnpjQTpAAAAAr8sn8uMISDLbhQn6Rhng9APJyRR9t0pB5ZXPb6JKu3maigTWPuiHZPB4PfL32DiTwxJ00EzLYHjRJCg4PVXXFScEvw3jEO4s8RqNDbW2IxiYpXHdfOiBobzJOGxeoinCJGu6G0R8DGw/3Mgg66o71pRtcczC4r7LJY2Le0F0nuqYBjI6bWiLgOfmNtYn+yHRAAAAA5dTUy7GRRvZGoJyR6fU+BBUtMZmUzscSuv43vePHMb9eo7UOOslQXHOhtqRbAHhBI3tMpJHS+cUzT7Ti+1/O2A==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA77M22j+c2k64Aa4TrtnxPgAAAAACAAAAAAAQZgAAAAEAACAAAAB6pfy5uvgkyUH7zgDLFRCaYC4N+/q0LmSU1DsC96RL0AAAAAAOgAAAAAIAACAAAABfX7e3PvG2tk0jgw/zuACKUnVI/leTPtsQ0Cs5tYtap5AAAAACTrKi+ZhzVGPeMpwBiN0h/oMcC1FbWUl4YFRoFGO1ymBaOCCrA2dfNaUFL8KbjNyCWQ0UVvMR/07edrAciPz1hp9uv2PQKtPGtUfmETJG93LulscPkz8jnA4suYFVRejru5rZdIhw8tf+rAjlyjfaXrzjDIsBjbmQKXCItsN1YHldIhJS/GyFp5YxQTzQwn5AAAAAylfl9eqI/LYxYOK1tf9TYEVF0FZQvUl4K5JwDFedZNEZKWbDzIlEU3csOoVHGoJslG6KimsbHosaxqmoKHY03Q==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -148,10 +148,10 @@
                 <SSIS:Property SSIS:Name="Name">HR_DataWarehouse</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">68</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">94</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DDEFBFFD-37D2-494E-9FC2-7344C8C27A2F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2095A124-B7AA-4BA7-8DDC-6A7A2EBCC85C}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

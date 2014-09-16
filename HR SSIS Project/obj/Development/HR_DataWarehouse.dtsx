@@ -2103,13 +2103,13 @@
                 <path
                   refId="Package\Fill Dimensions Tables\Fill DimEmployee Task.Paths[Derived Column Output1]"
                   name="Derived Column Output"
-                  startId="Package\Fill Dimensions Tables\Fill DimEmployee Task\Derived Column.Outputs[Derived Column Output]"
-                  endId="Package\Fill Dimensions Tables\Fill DimEmployee Task\OLE DB Command.Inputs[OLE DB Command Input]" />
+                  startId="Package\Fill Dimensions Tables\Fill DimEmployee Task\Derived Column 1.Outputs[Derived Column Output]"
+                  endId="Package\Fill Dimensions Tables\Fill DimEmployee Task\Insert Destination.Inputs[OLE DB Destination Input]" />
                 <path
                   refId="Package\Fill Dimensions Tables\Fill DimEmployee Task.Paths[Derived Column Output]"
                   name="Derived Column Output"
-                  startId="Package\Fill Dimensions Tables\Fill DimEmployee Task\Derived Column 1.Outputs[Derived Column Output]"
-                  endId="Package\Fill Dimensions Tables\Fill DimEmployee Task\Insert Destination.Inputs[OLE DB Destination Input]" />
+                  startId="Package\Fill Dimensions Tables\Fill DimEmployee Task\Derived Column.Outputs[Derived Column Output]"
+                  endId="Package\Fill Dimensions Tables\Fill DimEmployee Task\OLE DB Command.Inputs[OLE DB Command Input]" />
                 <path
                   refId="Package\Fill Dimensions Tables\Fill DimEmployee Task.Paths[Historical Attribute Inserts Output]"
                   name="Historical Attribute Inserts Output"
@@ -5132,13 +5132,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                 <path
                   refId="Package\Fill Staging Tables\Fill Staging Employee.Paths[Row Count Output 11]"
                   name="Row Count Output 1"
-                  startId="Package\Fill Staging Tables\Fill Staging Employee\Row Count.Outputs[Row Count Output 1]"
-                  endId="Package\Fill Staging Tables\Fill Staging Employee\Staging Valid Employee DB Destination.Inputs[OLE DB Destination Input]" />
+                  startId="Package\Fill Staging Tables\Fill Staging Employee\Row Count 1.Outputs[Row Count Output 1]"
+                  endId="Package\Fill Staging Tables\Fill Staging Employee\Staging Rejects Row Employee Destination.Inputs[OLE DB Destination Input]" />
                 <path
                   refId="Package\Fill Staging Tables\Fill Staging Employee.Paths[Row Count Output 1]"
                   name="Row Count Output 1"
-                  startId="Package\Fill Staging Tables\Fill Staging Employee\Row Count 1.Outputs[Row Count Output 1]"
-                  endId="Package\Fill Staging Tables\Fill Staging Employee\Staging Rejects Row Employee Destination.Inputs[OLE DB Destination Input]" />
+                  startId="Package\Fill Staging Tables\Fill Staging Employee\Row Count.Outputs[Row Count Output 1]"
+                  endId="Package\Fill Staging Tables\Fill Staging Employee\Staging Valid Employee DB Destination.Inputs[OLE DB Destination Input]" />
                 <path
                   refId="Package\Fill Staging Tables\Fill Staging Employee.Paths[ValidOutput]"
                   name="ValidOutput"
@@ -5323,7 +5323,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Fill Dimensions Tables\Fill DimEmployee Task\Slowly Changing Dimension"
           TopLeft="128,107.5" />
         <EdgeLayout
-          Id="Package\Fill Dimensions Tables\Fill DimEmployee Task.Paths[Derived Column Output1]"
+          Id="Package\Fill Dimensions Tables\Fill DimEmployee Task.Paths[Derived Column Output]"
           TopLeft="91.0000000000001,251.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5531,7 +5531,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fill Dimensions Tables\Fill DimEmployee Task.Paths[Derived Column Output]"
+          Id="Package\Fill Dimensions Tables\Fill DimEmployee Task.Paths[Derived Column Output1]"
           TopLeft="232,557.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5888,7 +5888,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fill Staging Tables\Fill Staging Employee.Paths[Row Count Output 1]"
+          Id="Package\Fill Staging Tables\Fill Staging Employee.Paths[Row Count Output 11]"
           TopLeft="526,339">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -5924,7 +5924,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Fill Staging Tables\Fill Staging Employee.Paths[Row Count Output 11]"
+          Id="Package\Fill Staging Tables\Fill Staging Employee.Paths[Row Count Output 1]"
           TopLeft="180,341">
           <EdgeLayout.Curve>
             <mssgle:Curve
