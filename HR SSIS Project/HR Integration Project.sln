@@ -1,17 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "HR_SSAS_Project", "..\HR SSAS Project\HR_SSAS_Project\HR_SSAS_Project.dwproj", "{C9FD28C6-2A39-413F-87D8-F6463A9E0297}"
-	ProjectSection(ProjectDependencies) = postProject
-		{EA80F790-40F8-467A-88B2-813ED4DCEE2B} = {EA80F790-40F8-467A-88B2-813ED4DCEE2B}
-	EndProjectSection
-EndProject
 Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "HR Report Project", "..\HR SSRS Project\HR Report Project\HR Report Project.rptproj", "{0C520FE8-BD62-4947-AEAC-92825661BDCA}"
 	ProjectSection(ProjectDependencies) = postProject
 		{EA80F790-40F8-467A-88B2-813ED4DCEE2B} = {EA80F790-40F8-467A-88B2-813ED4DCEE2B}
 	EndProjectSection
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "HR Integration Project", "HR Integration Project.dtproj", "{EA80F790-40F8-467A-88B2-813ED4DCEE2B}"
+EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "HR_SSAS_Project", "..\HR_SSAS_Project\HR_SSAS_Project.dwproj", "{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +18,6 @@ Global
 		Release|Default = Release|Default
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.Debug|Default.ActiveCfg = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.Debug|Default.Build.0 = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.Debug|Default.Deploy.0 = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.DebugLocal|Default.ActiveCfg = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.DebugLocal|Default.Build.0 = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.DebugLocal|Default.Deploy.0 = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.Development|Default.ActiveCfg = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.Development|Default.Build.0 = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.Development|Default.Deploy.0 = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.Release|Default.ActiveCfg = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.Release|Default.Build.0 = Development
-		{C9FD28C6-2A39-413F-87D8-F6463A9E0297}.Release|Default.Deploy.0 = Development
 		{0C520FE8-BD62-4947-AEAC-92825661BDCA}.Debug|Default.ActiveCfg = Debug
 		{0C520FE8-BD62-4947-AEAC-92825661BDCA}.Debug|Default.Build.0 = DebugLocal
 		{0C520FE8-BD62-4947-AEAC-92825661BDCA}.Debug|Default.Deploy.0 = DebugLocal
@@ -53,6 +38,18 @@ Global
 		{EA80F790-40F8-467A-88B2-813ED4DCEE2B}.Development|Default.Build.0 = Development
 		{EA80F790-40F8-467A-88B2-813ED4DCEE2B}.Release|Default.ActiveCfg = Development
 		{EA80F790-40F8-467A-88B2-813ED4DCEE2B}.Release|Default.Build.0 = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.Debug|Default.ActiveCfg = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.Debug|Default.Build.0 = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.Debug|Default.Deploy.0 = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.DebugLocal|Default.ActiveCfg = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.DebugLocal|Default.Build.0 = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.DebugLocal|Default.Deploy.0 = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.Development|Default.ActiveCfg = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.Development|Default.Build.0 = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.Development|Default.Deploy.0 = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.Release|Default.ActiveCfg = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.Release|Default.Build.0 = Development
+		{1E3CAAFE-F7F4-45EC-838F-B2BE7A2C9943}.Release|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
