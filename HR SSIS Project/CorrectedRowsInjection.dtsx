@@ -5,8 +5,8 @@
   DTS:CreatorName="LIGHTOFGOD\tame"
   DTS:CreatorComputerName="LIGHTOFGOD"
   DTS:CreationDate="8/11/2014 9:02:47 AM"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{3324E137-CDB8-46DD-AA5C-1CC505C83230}"
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{7D0D24DF-3EB2-4688-96BC-4784BED63A38}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:MaxErrorCount="0"
   DTS:LocaleID="1033"
@@ -419,6 +419,38 @@
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inject Corrected Rows Staging Task\DQS Cleansing"
+              name="DQS Cleansing"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              description="DQS Cleansing component"
+              usesDispositions="true">
+              <properties>
+                <property
+                  name="KnowledgebaseName"
+                  dataType="System.Int64"
+                  typeConverter="NOTBROWSABLE">0</property>
+                <property
+                  name="UserComponentTypeName"
+                  dataType="System.String">Microsoft.Ssdqs.Component.DataCorrection.Logic.DataCorrectionComponent, Microsoft.Ssdqs.Component.DataCorrection, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Inject Corrected Rows Staging Task\DQS Cleansing.Inputs[DQS Cleansing Input]"
+                  name="DQS Cleansing Input"
+                  hasSideEffects="true"
+                  errorRowDisposition="FailComponent">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inject Corrected Rows Staging Task\DQS Cleansing.Outputs[DQS Cleansing Output]"
+                  name="DQS Cleansing Output">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -1937,13 +1969,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="204,42"
-          Id="Package\Inject Corrected Rows Staging Task\Corrected Rows DB Source"
-          TopLeft="216,26" />
+          Size="285,42"
+          Id="Package\Inject Corrected Rows Staging Task\Update CorrectedFlad to false DB Command"
+          TopLeft="354,192" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Inject Corrected Rows Staging Task\OLE DB Destination"
+          TopLeft="115,189" />
         <NodeLayout
           Size="162,42"
           Id="Package\Inject Corrected Rows Staging Task\Script Component"
           TopLeft="234,98" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\Inject Corrected Rows Staging Task\Corrected Rows DB Source"
+          TopLeft="216,26" />
         <EdgeLayout
           Id="Package\Inject Corrected Rows Staging Task.Paths[OLE DB Source Output]"
           TopLeft="316.5,68">
@@ -1966,10 +2006,42 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Inject Corrected Rows Staging Task\OLE DB Destination"
-          TopLeft="115,189" />
+        <EdgeLayout
+          Id="Package\Inject Corrected Rows Staging Task.Paths[InvalidOutput]"
+          TopLeft="340.666666666667,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155.833333333333,52"
+              Start="0,0"
+              End="155.833333333333,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.1051344743276" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.1051344743276"
+                    Point2="0,21.1051344743276"
+                    Point3="4,21.1051344743276" />
+                  <mssgle:LineSegment
+                    End="151.833333333333,21.1051344743276" />
+                  <mssgle:CubicBezierSegment
+                    Point1="151.833333333333,21.1051344743276"
+                    Point2="155.833333333333,21.1051344743276"
+                    Point3="155.833333333333,25.1051344743276" />
+                  <mssgle:LineSegment
+                    End="155.833333333333,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="47.0986783854167,26.1051344743276,61.6359765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Inject Corrected Rows Staging Task.Paths[ValidOutput]"
           TopLeft="289.333333333333,140">
@@ -2007,56 +2079,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="285,42"
-          Id="Package\Inject Corrected Rows Staging Task\Update CorrectedFlad to false DB Command"
-          TopLeft="354,192" />
-        <EdgeLayout
-          Id="Package\Inject Corrected Rows Staging Task.Paths[InvalidOutput]"
-          TopLeft="340.666666666667,140">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="155.833333333333,52"
-              Start="0,0"
-              End="155.833333333333,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.1051344743276" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.1051344743276"
-                    Point2="0,21.1051344743276"
-                    Point3="4,21.1051344743276" />
-                  <mssgle:LineSegment
-                    End="151.833333333333,21.1051344743276" />
-                  <mssgle:CubicBezierSegment
-                    Point1="151.833333333333,21.1051344743276"
-                    Point2="155.833333333333,21.1051344743276"
-                    Point3="155.833333333333,25.1051344743276" />
-                  <mssgle:LineSegment
-                    End="155.833333333333,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="47.0986783854167,26.1051344743276,61.6359765625,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="147,42"
+          Id="Package\Inject Corrected Rows Staging Task\DQS Cleansing"
+          TopLeft="133,326" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Inject Corrected Rows Staging Task\Corrected Rows DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Inject Corrected Rows Staging Task\OLE DB Destination">
     <Properties>
@@ -2067,6 +2095,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inject Corrected Rows Staging Task\Corrected Rows DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

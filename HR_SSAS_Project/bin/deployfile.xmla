@@ -1,0 +1,1368 @@
+﻿<Batch Transaction="false" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <Alter AllowCreate="true" ObjectExpansion="ExpandFull">
+    <Object>
+      <DatabaseID>HR_SSAS_Project</DatabaseID>
+    </Object>
+    <ObjectDefinition>
+      <Database xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300">
+        <ID>HR_SSAS_Project</ID>
+        <Name>HR_SSAS_Project</Name>
+        <DataSourceImpersonationInfo>
+          <ImpersonationMode>Default</ImpersonationMode>
+        </DataSourceImpersonationInfo>
+        <Dimensions>
+          <Dimension>
+            <ID>Dim Department</ID>
+            <Name>Dim Department</Name>
+            <Annotations>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                <Value>
+                  <dds xmlns="">
+                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1158" scrolltop="-5398" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6376" y="13520" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                      <font>
+                        <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                      </font>
+                      <mouseicon>
+                        <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                      </mouseicon>
+                    </diagram>
+                    <layoutmanager>
+                      <ddsxmlobj />
+                    </layoutmanager>
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimDepartment" left="-324" top="-2990" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3969" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                      <control>
+                        <ddsxmlobjectstreaminitwrapper binary="00080000810f0000a50a0000" />
+                      </control>
+                      <layoutobject>
+                        <ddsxmlobj>
+                          <property name="LogicalObject" value="dbo_DimDepartment" vartype="8" />
+                        </ddsxmlobj>
+                      </layoutobject>
+                      <shape groupshapeid="0" groupnode="0" />
+                    </ddscontrol>
+                  </dds>
+                </Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                <Value>true</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                <Value>false</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                <Value>true</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                <Value>-1158</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                <Value>-5398</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                <Value>-324</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                <Value>-2990</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                <Value>100</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+                <Value>
+                  <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+                    <Shapes NodeWidth="165">
+                      <Shape Id="Department Key" Expanded="false">
+                        <Attributes>
+                          <Attribute Id="Department Key" />
+                        </Attributes>
+                        <Position x="20" y="20" />
+                      </Shape>
+                      <Shape Id="Parent Department Key" Expanded="false">
+                        <Attributes>
+                          <Attribute Id="Parent Department Key" />
+                        </Attributes>
+                        <Position x="231" y="20" />
+                      </Shape>
+                    </Shapes>
+                  </DiagramLayout>
+                </Value>
+              </Annotation>
+            </Annotations>
+            <Source xsi:type="DataSourceViewBinding">
+              <DataSourceViewID>HR Cube</DataSourceViewID>
+            </Source>
+            <ErrorConfiguration>
+              <KeyNotFound>ReportAndStop</KeyNotFound>
+              <KeyDuplicate>ReportAndStop</KeyDuplicate>
+              <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+            </ErrorConfiguration>
+            <Attributes>
+              <Attribute>
+                <ID>Department Key</ID>
+                <Name>Department Key</Name>
+                <Usage>Key</Usage>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDepartment</TableID>
+                      <ColumnID>DepartmentKey</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+                <NameColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>50</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimDepartment</TableID>
+                    <ColumnID>DepartmentName</ColumnID>
+                  </Source>
+                </NameColumn>
+                <AttributeRelationships>
+                  <AttributeRelationship>
+                    <AttributeID>Parent Department Key</AttributeID>
+                    <Name>Parent Department Key</Name>
+                  </AttributeRelationship>
+                  <AttributeRelationship>
+                    <AttributeID>Department Name</AttributeID>
+                    <Name>Department Name</Name>
+                  </AttributeRelationship>
+                </AttributeRelationships>
+                <OrderBy>Key</OrderBy>
+              </Attribute>
+              <Attribute>
+                <ID>Parent Department Key</ID>
+                <Name>Parent Department Key</Name>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDepartment</TableID>
+                      <ColumnID>ParentDepartmentKey</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                  <KeyColumn>
+                    <DataType>WChar</DataType>
+                    <DataSize>50</DataSize>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDepartment</TableID>
+                      <ColumnID>DepartmentName</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+                <NameColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>50</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimDepartment</TableID>
+                    <ColumnID>DepartmentName</ColumnID>
+                  </Source>
+                </NameColumn>
+              </Attribute>
+              <Attribute>
+                <ID>Department Name</ID>
+                <Name>Department Name</Name>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>WChar</DataType>
+                    <DataSize>50</DataSize>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDepartment</TableID>
+                      <ColumnID>DepartmentName</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+              </Attribute>
+            </Attributes>
+          </Dimension>
+          <Dimension>
+            <ID>Dim Date</ID>
+            <Name>Dim Date</Name>
+            <Annotations>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                <Value>
+                  <dds xmlns="">
+                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1642" scrolltop="-4339" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6376" y="13520" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                      <font>
+                        <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                      </font>
+                      <mouseicon>
+                        <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                      </mouseicon>
+                    </diagram>
+                    <layoutmanager>
+                      <ddsxmlobj />
+                    </layoutmanager>
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimDate" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                      <control>
+                        <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000ea120000" />
+                      </control>
+                      <layoutobject>
+                        <ddsxmlobj>
+                          <property name="LogicalObject" value="dbo_DimDate" vartype="8" />
+                        </ddsxmlobj>
+                      </layoutobject>
+                      <shape groupshapeid="0" groupnode="0" />
+                    </ddscontrol>
+                  </dds>
+                </Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                <Value>true</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                <Value>false</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                <Value>true</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                <Value>-1642</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                <Value>-4339</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                <Value>20</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                <Value>0</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                <Value>100</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+                <Value>
+                  <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+                    <Shapes NodeWidth="82">
+                      <Shape Id="Date Key" Expanded="false">
+                        <Attributes>
+                          <Attribute Id="Date Key" />
+                          <Attribute Id="Date Name" />
+                        </Attributes>
+                        <Position x="20" y="20" />
+                      </Shape>
+                      <Shape Id="Date" Expanded="false">
+                        <Attributes>
+                          <Attribute Id="Date" />
+                        </Attributes>
+                        <Position x="127" y="20" />
+                      </Shape>
+                      <Shape Id="Month Name" Expanded="false">
+                        <Attributes>
+                          <Attribute Id="Month Name" />
+                        </Attributes>
+                        <Position x="235" y="20" />
+                      </Shape>
+                      <Shape Id="Quarter" Expanded="false">
+                        <Attributes>
+                          <Attribute Id="Quarter" />
+                        </Attributes>
+                        <Position x="342" y="20" />
+                      </Shape>
+                      <Shape Id="Year" Expanded="false">
+                        <Attributes>
+                          <Attribute Id="Year" />
+                        </Attributes>
+                        <Position x="450" y="20" />
+                      </Shape>
+                    </Shapes>
+                  </DiagramLayout>
+                </Value>
+              </Annotation>
+            </Annotations>
+            <Source xsi:type="DataSourceViewBinding">
+              <DataSourceViewID>HR Cube</DataSourceViewID>
+            </Source>
+            <ErrorConfiguration>
+              <KeyNotFound>ReportAndStop</KeyNotFound>
+              <KeyDuplicate>ReportAndStop</KeyDuplicate>
+              <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+            </ErrorConfiguration>
+            <Attributes>
+              <Attribute>
+                <ID>Date Key</ID>
+                <Name>Date Key</Name>
+                <Usage>Key</Usage>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDate</TableID>
+                      <ColumnID>DateKey</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+                <AttributeRelationships>
+                  <AttributeRelationship>
+                    <AttributeID>Date</AttributeID>
+                    <Name>Date</Name>
+                  </AttributeRelationship>
+                  <AttributeRelationship>
+                    <AttributeID>Date Name</AttributeID>
+                    <Name>Date Name</Name>
+                  </AttributeRelationship>
+                </AttributeRelationships>
+                <OrderBy>Key</OrderBy>
+                <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+              </Attribute>
+              <Attribute>
+                <ID>Year</ID>
+                <Name>Year</Name>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDate</TableID>
+                      <ColumnID>Year</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+                <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+              </Attribute>
+              <Attribute>
+                <ID>Quarter</ID>
+                <Name>Quarter</Name>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDate</TableID>
+                      <ColumnID>Quarter</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                  <KeyColumn>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDate</TableID>
+                      <ColumnID>Year</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+                <NameColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>50</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimDate</TableID>
+                    <ColumnID>QuarterName</ColumnID>
+                  </Source>
+                </NameColumn>
+                <AttributeRelationships>
+                  <AttributeRelationship>
+                    <AttributeID>Year</AttributeID>
+                    <Name>Year</Name>
+                  </AttributeRelationship>
+                </AttributeRelationships>
+                <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+              </Attribute>
+              <Attribute>
+                <ID>Date</ID>
+                <Name>Date</Name>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>Date</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDate</TableID>
+                      <ColumnID>Date</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                  <KeyColumn>
+                    <DataType>WChar</DataType>
+                    <DataSize>50</DataSize>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDate</TableID>
+                      <ColumnID>MonthName</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+                <NameColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>50</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimDate</TableID>
+                    <ColumnID>Date</ColumnID>
+                  </Source>
+                </NameColumn>
+                <AttributeRelationships>
+                  <AttributeRelationship>
+                    <AttributeID>Month Name</AttributeID>
+                    <Name>Month Name</Name>
+                  </AttributeRelationship>
+                </AttributeRelationships>
+                <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+              </Attribute>
+              <Attribute>
+                <ID>Date Name</ID>
+                <Name>Date Name</Name>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>WChar</DataType>
+                    <DataSize>50</DataSize>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDate</TableID>
+                      <ColumnID>DateName</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+              </Attribute>
+              <Attribute>
+                <ID>Month Name</ID>
+                <Name>Month Name</Name>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>WChar</DataType>
+                    <DataSize>50</DataSize>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDate</TableID>
+                      <ColumnID>MonthName</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                  <KeyColumn>
+                    <DataType>WChar</DataType>
+                    <DataSize>50</DataSize>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimDate</TableID>
+                      <ColumnID>QuarterName</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+                <NameColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>50</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimDate</TableID>
+                    <ColumnID>MonthName</ColumnID>
+                  </Source>
+                </NameColumn>
+                <AttributeRelationships>
+                  <AttributeRelationship>
+                    <AttributeID>Quarter</AttributeID>
+                    <Name>Quarter</Name>
+                  </AttributeRelationship>
+                </AttributeRelationships>
+              </Attribute>
+            </Attributes>
+            <Hierarchies>
+              <Hierarchy>
+                <ID>Hierarchy</ID>
+                <Name>Hierarchy</Name>
+                <Levels>
+                  <Level>
+                    <ID>Year</ID>
+                    <Name>Year</Name>
+                    <SourceAttributeID>Year</SourceAttributeID>
+                  </Level>
+                  <Level>
+                    <ID>Quarter</ID>
+                    <Name>Quarter</Name>
+                    <SourceAttributeID>Quarter</SourceAttributeID>
+                  </Level>
+                  <Level>
+                    <ID>Month Name</ID>
+                    <Name>Month Name</Name>
+                    <SourceAttributeID>Month Name</SourceAttributeID>
+                  </Level>
+                  <Level>
+                    <ID>Date</ID>
+                    <Name>Date</Name>
+                    <SourceAttributeID>Date</SourceAttributeID>
+                  </Level>
+                </Levels>
+              </Hierarchy>
+            </Hierarchies>
+          </Dimension>
+          <Dimension>
+            <ID>Dim Employee</ID>
+            <Name>Dim Employee</Name>
+            <Annotations>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                <Value>
+                  <dds xmlns="">
+                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1436" scrolltop="-4260" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6376" y="13520" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                      <font>
+                        <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                      </font>
+                      <mouseicon>
+                        <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                      </mouseicon>
+                    </diagram>
+                    <layoutmanager>
+                      <ddsxmlobj />
+                    </layoutmanager>
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimEmployee" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3413" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                      <control>
+                        <ddsxmlobjectstreaminitwrapper binary="00080000550d000088130000" />
+                      </control>
+                      <layoutobject>
+                        <ddsxmlobj>
+                          <property name="LogicalObject" value="dbo_DimEmployee" vartype="8" />
+                        </ddsxmlobj>
+                      </layoutobject>
+                      <shape groupshapeid="0" groupnode="0" />
+                    </ddscontrol>
+                  </dds>
+                </Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                <Value>true</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                <Value>false</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                <Value>true</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                <Value>-1436</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                <Value>-4260</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                <Value>20</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                <Value>0</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                <Value>100</Value>
+              </Annotation>
+            </Annotations>
+            <Source xsi:type="DataSourceViewBinding">
+              <DataSourceViewID>HR Cube</DataSourceViewID>
+            </Source>
+            <ErrorConfiguration>
+              <KeyNotFound>ReportAndStop</KeyNotFound>
+              <KeyDuplicate>ReportAndStop</KeyDuplicate>
+              <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+            </ErrorConfiguration>
+            <Attributes>
+              <Attribute>
+                <ID>Employee Key</ID>
+                <Name>Employee Key</Name>
+                <Usage>Key</Usage>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimEmployee</TableID>
+                      <ColumnID>EmployeeKey</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+                <AttributeRelationships>
+                  <AttributeRelationship>
+                    <AttributeID>Gender</AttributeID>
+                    <Name>Gender</Name>
+                  </AttributeRelationship>
+                  <AttributeRelationship>
+                    <AttributeID>Department Name</AttributeID>
+                    <Name>Department Name</Name>
+                  </AttributeRelationship>
+                  <AttributeRelationship>
+                    <AttributeID>Hiring Date</AttributeID>
+                    <Name>Hiring Date</Name>
+                  </AttributeRelationship>
+                </AttributeRelationships>
+                <OrderBy>Key</OrderBy>
+              </Attribute>
+              <Attribute>
+                <ID>Gender</ID>
+                <Name>Gender</Name>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>WChar</DataType>
+                    <DataSize>1</DataSize>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimEmployee</TableID>
+                      <ColumnID>Gender</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+              </Attribute>
+              <Attribute>
+                <ID>Department Name</ID>
+                <Name>Department Name</Name>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>WChar</DataType>
+                    <DataSize>50</DataSize>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimEmployee</TableID>
+                      <ColumnID>DepartmentName</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+                <NameColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>50</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimEmployee</TableID>
+                    <ColumnID>DepartmentName</ColumnID>
+                  </Source>
+                </NameColumn>
+              </Attribute>
+              <Attribute>
+                <ID>Hiring Date</ID>
+                <Name>Hiring Date</Name>
+                <Type>Account</Type>
+                <KeyColumns>
+                  <KeyColumn>
+                    <DataType>Date</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_DimEmployee</TableID>
+                      <ColumnID>HiringDate</ColumnID>
+                    </Source>
+                  </KeyColumn>
+                </KeyColumns>
+              </Attribute>
+            </Attributes>
+          </Dimension>
+        </Dimensions>
+        <Cubes>
+          <Cube>
+            <ID>HR Cube</ID>
+            <Name>HR Cube</Name>
+            <Annotations>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+                <Value>
+                  <dds xmlns="">
+                    <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="16" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3844" scrolltop="-8" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="89" x="16166" y="13520" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                      <font>
+                        <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                      </font>
+                      <mouseicon>
+                        <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                      </mouseicon>
+                    </diagram>
+                    <layoutmanager>
+                      <ddsxmlobj />
+                    </layoutmanager>
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimEmployee" left="9956" top="3010" logicalid="8" controlid="1" masterid="0" hint1="0" hint2="0" width="3413" height="7437" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                      <control>
+                        <ddsxmlobjectstreaminitwrapper binary="00080000550d00000d1d0000" />
+                      </control>
+                      <layoutobject>
+                        <ddsxmlobj>
+                          <property name="LogicalObject" value="dbo_DimEmployee" vartype="8" />
+                        </ddsxmlobj>
+                      </layoutobject>
+                      <shape groupshapeid="0" groupnode="0" />
+                    </ddscontrol>
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimDepartment" left="-3459" top="7009" logicalid="9" controlid="2" masterid="0" hint1="0" hint2="0" width="3969" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                      <control>
+                        <ddsxmlobjectstreaminitwrapper binary="00080000810f0000a50a0000" />
+                      </control>
+                      <layoutobject>
+                        <ddsxmlobj>
+                          <property name="LogicalObject" value="dbo_DimDepartment" vartype="8" />
+                        </ddsxmlobj>
+                      </layoutobject>
+                      <shape groupshapeid="0" groupnode="0" />
+                    </ddscontrol>
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimDate" left="3114" top="298" logicalid="10" controlid="3" masterid="0" hint1="0" hint2="0" width="3000" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                      <control>
+                        <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000ea120000" />
+                      </control>
+                      <layoutobject>
+                        <ddsxmlobj>
+                          <property name="LogicalObject" value="dbo_DimDate" vartype="8" />
+                        </ddsxmlobj>
+                      </layoutobject>
+                      <shape groupshapeid="0" groupnode="0" />
+                    </ddscontrol>
+                    <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FactHRSnapshot" left="3159" top="8105" logicalid="11" controlid="4" masterid="0" hint1="0" hint2="0" width="3149" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                      <control>
+                        <ddsxmlobjectstreaminitwrapper binary="000800004d0c0000fe080000" />
+                      </control>
+                      <layoutobject>
+                        <ddsxmlobj>
+                          <property name="LogicalObject" value="dbo_FactHRSnapshot" vartype="8" />
+                        </ddsxmlobj>
+                      </layoutobject>
+                      <shape groupshapeid="0" groupnode="0" />
+                    </ddscontrol>
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="6008" top="5229" logicalid="12" controlid="5" masterid="0" hint1="0" hint2="0" width="4248" height="4327" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                      <control>
+                        <ddsxmlobj>
+                          <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                        </ddsxmlobj>
+                      </control>
+                      <layoutobject>
+                        <ddsxmlobj>
+                          <property name="LogicalObject" value="dataSet.Relations[FK_FactHRSnapshot_DimEmployee]" vartype="8" />
+                          <property name="Virtual" value="0" vartype="11" />
+                          <property name="VisibleAP" value="0" vartype="3" />
+                        </ddsxmlobj>
+                      </layoutobject>
+                      <connector lineroutestyle="MSDDS.Rectilinear" sourceid="1" destid="4" sourceattachpoint="18" destattachpoint="13" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                        <point x="9956" y="5628" />
+                        <point x="6708" y="5628" />
+                        <point x="6708" y="9256" />
+                        <point x="6308" y="9256" />
+                      </connector>
+                    </ddscontrol>
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="210" top="6872" logicalid="13" controlid="6" masterid="0" hint1="0" hint2="0" width="3249" height="2134" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                      <control>
+                        <ddsxmlobj>
+                          <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                        </ddsxmlobj>
+                      </control>
+                      <layoutobject>
+                        <ddsxmlobj>
+                          <property name="LogicalObject" value="dataSet.Relations[FK_FactHRSnapshot_DimDepartment]" vartype="8" />
+                          <property name="Virtual" value="0" vartype="11" />
+                          <property name="VisibleAP" value="0" vartype="3" />
+                        </ddsxmlobj>
+                      </layoutobject>
+                      <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="4" sourceattachpoint="15" destattachpoint="10" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                        <point x="510" y="7271" />
+                        <point x="1581" y="7271" />
+                        <point x="1581" y="8706" />
+                        <point x="3159" y="8706" />
+                      </connector>
+                    </ddscontrol>
+                    <ddscontrol controlprogid="MSDDS.Polyline" left="3115" top="4641" logicalid="14" controlid="7" masterid="0" hint1="0" hint2="0" width="818" height="3764" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                      <control>
+                        <ddsxmlobj>
+                          <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                        </ddsxmlobj>
+                      </control>
+                      <layoutobject>
+                        <ddsxmlobj>
+                          <property name="LogicalObject" value="dataSet.Relations[FK_FactHRSnapshot_DimDate]" vartype="8" />
+                          <property name="Virtual" value="0" vartype="11" />
+                          <property name="VisibleAP" value="0" vartype="3" />
+                        </ddsxmlobj>
+                      </layoutobject>
+                      <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="4" sourceattachpoint="1" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                        <point x="3514" y="5140" />
+                        <point x="3514" y="5688" />
+                        <point x="3633" y="5688" />
+                        <point x="3633" y="8105" />
+                      </connector>
+                    </ddscontrol>
+                  </dds>
+                </Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                <Value>true</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+                <Value>false</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+                <Value>true</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+                <Value>-3844</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+                <Value>-8</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+                <Value>-3459</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+                <Value>298</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+                <Value>89</Value>
+              </Annotation>
+            </Annotations>
+            <Dimensions>
+              <Dimension>
+                <ID>Dim Department</ID>
+                <Name>Dim Department</Name>
+                <DimensionID>Dim Department</DimensionID>
+                <Attributes>
+                  <Attribute>
+                    <AttributeID>Department Key</AttributeID>
+                  </Attribute>
+                  <Attribute>
+                    <AttributeID>Parent Department Key</AttributeID>
+                  </Attribute>
+                  <Attribute>
+                    <AttributeID>Department Name</AttributeID>
+                  </Attribute>
+                </Attributes>
+              </Dimension>
+              <Dimension>
+                <ID>Dim Employee</ID>
+                <Name>Dim Employee</Name>
+                <DimensionID>Dim Employee</DimensionID>
+                <Attributes>
+                  <Attribute>
+                    <AttributeID>Employee Key</AttributeID>
+                  </Attribute>
+                  <Attribute>
+                    <AttributeID>Gender</AttributeID>
+                  </Attribute>
+                  <Attribute>
+                    <AttributeID>Department Name</AttributeID>
+                  </Attribute>
+                  <Attribute>
+                    <AttributeID>Hiring Date</AttributeID>
+                  </Attribute>
+                </Attributes>
+              </Dimension>
+              <Dimension>
+                <ID>Dim Date</ID>
+                <Name>Dim Date</Name>
+                <DimensionID>Dim Date</DimensionID>
+                <Attributes>
+                  <Attribute>
+                    <AttributeID>Date Key</AttributeID>
+                  </Attribute>
+                  <Attribute>
+                    <AttributeID>Year</AttributeID>
+                  </Attribute>
+                  <Attribute>
+                    <AttributeID>Quarter</AttributeID>
+                  </Attribute>
+                  <Attribute>
+                    <AttributeID>Date</AttributeID>
+                  </Attribute>
+                  <Attribute>
+                    <AttributeID>Date Name</AttributeID>
+                  </Attribute>
+                  <Attribute>
+                    <AttributeID>Month Name</AttributeID>
+                  </Attribute>
+                </Attributes>
+                <Hierarchies>
+                  <Hierarchy>
+                    <HierarchyID>Hierarchy</HierarchyID>
+                  </Hierarchy>
+                </Hierarchies>
+              </Dimension>
+            </Dimensions>
+            <MeasureGroups>
+              <MeasureGroup>
+                <ID>Fact HR Snapshot</ID>
+                <Name>Fact HR Snapshot</Name>
+                <Measures>
+                  <Measure>
+                    <ID>Fact HR Snapshot Count</ID>
+                    <Name>Fact HR Snapshot Count</Name>
+                    <AggregateFunction>Count</AggregateFunction>
+                    <Source>
+                      <DataType>Integer</DataType>
+                      <DataSize>4</DataSize>
+                      <Source xsi:type="RowBinding">
+                        <TableID>dbo_FactHRSnapshot</TableID>
+                      </Source>
+                    </Source>
+                  </Measure>
+                </Measures>
+                <StorageMode>Molap</StorageMode>
+                <ProcessingMode>Regular</ProcessingMode>
+                <Dimensions>
+                  <Dimension xsi:type="RegularMeasureGroupDimension">
+                    <CubeDimensionID>Dim Department</CubeDimensionID>
+                    <Attributes>
+                      <Attribute>
+                        <AttributeID>Department Key</AttributeID>
+                        <KeyColumns>
+                          <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                              <TableID>dbo_FactHRSnapshot</TableID>
+                              <ColumnID>DepartmentKey</ColumnID>
+                            </Source>
+                          </KeyColumn>
+                        </KeyColumns>
+                        <Type>Granularity</Type>
+                      </Attribute>
+                    </Attributes>
+                  </Dimension>
+                  <Dimension xsi:type="RegularMeasureGroupDimension">
+                    <CubeDimensionID>Dim Date</CubeDimensionID>
+                    <Attributes>
+                      <Attribute>
+                        <AttributeID>Date Key</AttributeID>
+                        <KeyColumns>
+                          <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                              <TableID>dbo_FactHRSnapshot</TableID>
+                              <ColumnID>HiringDateKey</ColumnID>
+                            </Source>
+                          </KeyColumn>
+                        </KeyColumns>
+                        <Type>Granularity</Type>
+                      </Attribute>
+                    </Attributes>
+                  </Dimension>
+                  <Dimension xsi:type="RegularMeasureGroupDimension">
+                    <CubeDimensionID>Dim Employee</CubeDimensionID>
+                    <Attributes>
+                      <Attribute>
+                        <AttributeID>Employee Key</AttributeID>
+                        <KeyColumns>
+                          <KeyColumn>
+                            <DataType>Integer</DataType>
+                            <Source xsi:type="ColumnBinding">
+                              <TableID>dbo_FactHRSnapshot</TableID>
+                              <ColumnID>EmployeeKey</ColumnID>
+                            </Source>
+                          </KeyColumn>
+                        </KeyColumns>
+                        <Type>Granularity</Type>
+                      </Attribute>
+                    </Attributes>
+                  </Dimension>
+                </Dimensions>
+                <Partitions>
+                  <Partition>
+                    <ID>Fact HR Snapshot</ID>
+                    <Name>Fact HR Snapshot</Name>
+                    <Source xsi:type="DsvTableBinding">
+                      <DataSourceViewID>HR Cube</DataSourceViewID>
+                      <TableID>dbo_FactHRSnapshot</TableID>
+                    </Source>
+                    <StorageMode>Molap</StorageMode>
+                    <ProcessingMode>Regular</ProcessingMode>
+                    <ProactiveCaching>
+                      <SilenceInterval>-PT1S</SilenceInterval>
+                      <Latency>-PT1S</Latency>
+                      <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+                      <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+                      <Source xsi:type="ProactiveCachingInheritedBinding" />
+                    </ProactiveCaching>
+                  </Partition>
+                </Partitions>
+              </MeasureGroup>
+            </MeasureGroups>
+            <Source>
+              <DataSourceViewID>HR Cube</DataSourceViewID>
+            </Source>
+            <MdxScripts>
+              <MdxScript>
+                <ID>MdxScript</ID>
+                <Name>MdxScript</Name>
+                <Commands>
+                  <Command>
+                    <Text>/*
+The CALCULATE command controls the aggregation of leaf cells in the cube.
+If the CALCULATE command is deleted or modified, the data within the cube is affected.
+You should edit this command only if you manually specify how the cube is aggregated.
+*/
+CALCULATE; </Text>
+                  </Command>
+                </Commands>
+              </MdxScript>
+            </MdxScripts>
+          </Cube>
+        </Cubes>
+        <DataSources>
+          <DataSource xsi:type="RelationalDataSource">
+            <ID>DW Human Resource</ID>
+            <Name>DW Human Resource</Name>
+            <ConnectionString>Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=DWHumanResource</ConnectionString>
+            <ImpersonationInfo>
+              <ImpersonationMode>ImpersonateAccount</ImpersonationMode>
+              <Account>LIGHTOFGOD\tame</Account>
+            </ImpersonationInfo>
+            <Timeout>PT0S</Timeout>
+          </DataSource>
+        </DataSources>
+        <DataSourceViews>
+          <DataSourceView>
+            <ID>HR Cube</ID>
+            <Name>HR Cube</Name>
+            <Annotations>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+                <Value>true</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+                <Value>_ALL_TABLES_</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+                <Value>true</Value>
+              </Annotation>
+              <Annotation>
+                <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+                <Value>
+                  <Layouts xmlns="">
+                    <Diagram>
+                      <Name>_ALL_TABLES_</Name>
+                      <DiagramLayout>
+                        <dds>
+                          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="16" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4567" scrolltop="3047" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="85" x="16695" y="14843" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                            <font>
+                              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                            </font>
+                            <mouseicon>
+                              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                            </mouseicon>
+                          </diagram>
+                          <layoutmanager>
+                            <ddsxmlobj />
+                          </layoutmanager>
+                          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="FactHRSnapshot" left="1730" top="6620" logicalid="8" controlid="1" masterid="0" hint1="0" hint2="0" width="3149" height="2302" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                            <control>
+                              <ddsxmlobjectstreaminitwrapper binary="000800004d0c0000fe080000" />
+                            </control>
+                            <layoutobject>
+                              <ddsxmlobj>
+                                <property name="LogicalObject" value="dbo_FactHRSnapshot" vartype="8" />
+                              </ddsxmlobj>
+                            </layoutobject>
+                            <shape groupshapeid="0" groupnode="0" />
+                          </ddscontrol>
+                          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimDate" left="0" top="0" logicalid="9" controlid="2" masterid="0" hint1="0" hint2="0" width="3000" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                            <control>
+                              <ddsxmlobjectstreaminitwrapper binary="00080000b80b0000ea120000" />
+                            </control>
+                            <layoutobject>
+                              <ddsxmlobj>
+                                <property name="LogicalObject" value="dbo_DimDate" vartype="8" />
+                              </ddsxmlobj>
+                            </layoutobject>
+                            <shape groupshapeid="0" groupnode="0" />
+                          </ddscontrol>
+                          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimDepartment" left="8089" top="6129" logicalid="10" controlid="3" masterid="0" hint1="0" hint2="0" width="3969" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                            <control>
+                              <ddsxmlobjectstreaminitwrapper binary="00080000810f0000a50a0000" />
+                            </control>
+                            <layoutobject>
+                              <ddsxmlobj>
+                                <property name="LogicalObject" value="dbo_DimDepartment" vartype="8" />
+                              </ddsxmlobj>
+                            </layoutobject>
+                            <shape groupshapeid="0" groupnode="0" />
+                          </ddscontrol>
+                          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimEmployee" left="4" top="10420" logicalid="11" controlid="4" masterid="0" hint1="0" hint2="0" width="3413" height="7677" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                            <control>
+                              <ddsxmlobjectstreaminitwrapper binary="00080000550d0000fd1d0000" />
+                            </control>
+                            <layoutobject>
+                              <ddsxmlobj>
+                                <property name="LogicalObject" value="dbo_DimEmployee" vartype="8" />
+                              </ddsxmlobj>
+                            </layoutobject>
+                            <shape groupshapeid="0" groupnode="0" />
+                          </ddscontrol>
+                          <ddscontrol controlprogid="MSDDS.Polyline" left="4579" top="6921" logicalid="12" controlid="5" masterid="0" hint1="0" hint2="0" width="3810" height="970" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                            <control>
+                              <ddsxmlobj>
+                                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                              </ddsxmlobj>
+                            </control>
+                            <layoutobject>
+                              <ddsxmlobj>
+                                <property name="LogicalObject" value="dataSet.Relations[FK_FactHRSnapshot_DimDepartment]" vartype="8" />
+                                <property name="Virtual" value="0" vartype="11" />
+                                <property name="VisibleAP" value="0" vartype="3" />
+                              </ddsxmlobj>
+                            </layoutobject>
+                            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="18" destattachpoint="11" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                              <point x="8089" y="7491" />
+                              <point x="6484" y="7491" />
+                              <point x="6484" y="7221" />
+                              <point x="4879" y="7221" />
+                            </connector>
+                          </ddscontrol>
+                          <ddscontrol controlprogid="MSDDS.Polyline" left="1101" top="4343" logicalid="13" controlid="6" masterid="0" hint1="0" hint2="0" width="1403" height="2577" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                            <control>
+                              <ddsxmlobj>
+                                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                              </ddsxmlobj>
+                            </control>
+                            <layoutobject>
+                              <ddsxmlobj>
+                                <property name="LogicalObject" value="dataSet.Relations[FK_FactHRSnapshot_DimDate]" vartype="8" />
+                                <property name="Virtual" value="0" vartype="11" />
+                                <property name="VisibleAP" value="0" vartype="3" />
+                              </ddsxmlobj>
+                            </layoutobject>
+                            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="5" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                              <point x="1500" y="4842" />
+                              <point x="1500" y="5591" />
+                              <point x="2204" y="5591" />
+                              <point x="2204" y="6620" />
+                            </connector>
+                          </ddscontrol>
+                          <ddscontrol controlprogid="MSDDS.Polyline" left="2411" top="8622" logicalid="14" controlid="7" masterid="0" hint1="0" hint2="0" width="799" height="2298" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                            <control>
+                              <ddsxmlobj>
+                                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+                              </ddsxmlobj>
+                            </control>
+                            <layoutobject>
+                              <ddsxmlobj>
+                                <property name="LogicalObject" value="dataSet.Relations[FK_FactHRSnapshot_DimEmployee]" vartype="8" />
+                                <property name="Virtual" value="0" vartype="11" />
+                                <property name="VisibleAP" value="0" vartype="3" />
+                              </ddsxmlobj>
+                            </layoutobject>
+                            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="8" destattachpoint="3" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+                              <point x="2810" y="10420" />
+                              <point x="2810" y="9842" />
+                              <point x="2754" y="9842" />
+                              <point x="2754" y="8922" />
+                            </connector>
+                          </ddscontrol>
+                        </dds>
+                      </DiagramLayout>
+                      <ShowRelationshipNames>False</ShowRelationshipNames>
+                      <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+                      <DiagramViewPortLeft>-4567</DiagramViewPortLeft>
+                      <DiagramViewPortTop>3047</DiagramViewPortTop>
+                      <DiagramBoundingLeft>0</DiagramBoundingLeft>
+                      <DiagramBoundingTop>0</DiagramBoundingTop>
+                      <DiagramZoom>85</DiagramZoom>
+                    </Diagram>
+                  </Layouts>
+                </Value>
+              </Annotation>
+            </Annotations>
+            <DataSourceID>DW Human Resource</DataSourceID>
+            <Schema>
+              <xs:schema id="HR_x0020_Cube" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+                <xs:element name="HR_x0020_Cube" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+                  <xs:complexType>
+                    <xs:choice minOccurs="0" maxOccurs="unbounded">
+                      <xs:element name="dbo_FactHRSnapshot" msprop:DbTableName="FactHRSnapshot" msprop:FriendlyName="FactHRSnapshot" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="EmployeeKey" msprop:DbColumnName="EmployeeKey" msprop:FriendlyName="EmployeeKey" type="xs:int" />
+                            <xs:element name="DepartmentKey" msprop:DbColumnName="DepartmentKey" msprop:FriendlyName="DepartmentKey" type="xs:int" />
+                            <xs:element name="HiringDateKey" msprop:DbColumnName="HiringDateKey" msprop:FriendlyName="HiringDateKey" type="xs:int" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="dbo_DimDate" msprop:DbTableName="DimDate" msprop:FriendlyName="DimDate" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="DateKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:DbColumnName="DateKey" msprop:FriendlyName="DateKey" type="xs:int" />
+                            <xs:element name="Date" msprop:DbColumnName="Date" msprop:FriendlyName="Date" type="xs:dateTime" />
+                            <xs:element name="DateName" msprop:DbColumnName="DateName" msprop:FriendlyName="DateName" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Month" msprop:DbColumnName="Month" msprop:FriendlyName="Month" type="xs:int" />
+                            <xs:element name="MonthName" msprop:DbColumnName="MonthName" msprop:FriendlyName="MonthName">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Quarter" msprop:DbColumnName="Quarter" msprop:FriendlyName="Quarter" type="xs:int" />
+                            <xs:element name="QuarterName" msprop:DbColumnName="QuarterName" msprop:FriendlyName="QuarterName">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Year" msprop:DbColumnName="Year" msprop:FriendlyName="Year" type="xs:int" />
+                            <xs:element name="YearName" msprop:DbColumnName="YearName" msprop:FriendlyName="YearName">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="dbo_DimDepartment" msprop:IsLogical="True" msprop:FriendlyName="DimDepartment" msprop:DbTableName="DimDepartment" msprop:TableType="View" msprop:QueryDefinition="SELECT        DepartmentKey, DepartmentID, DepartmentName, ParentDepartmentKey&#xD;&#xA;FROM            DimDepartment" msprop:QueryBuilder="SpecificQueryBuilder">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="DepartmentKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:DbColumnName="DepartmentKey" msprop:FriendlyName="DepartmentKey" type="xs:int" />
+                            <xs:element name="DepartmentID" msprop:DbColumnName="DepartmentID" msprop:FriendlyName="DepartmentID" type="xs:int" minOccurs="0" />
+                            <xs:element name="DepartmentName" msprop:DbColumnName="DepartmentName" msprop:FriendlyName="DepartmentName" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="ParentDepartmentKey" msprop:DbColumnName="ParentDepartmentKey" msprop:FriendlyName="ParentDepartmentKey" type="xs:int" minOccurs="0" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="dbo_DimEmployee" msprop:DbTableName="DimEmployee" msprop:FriendlyName="DimEmployee" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="EmployeeKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:DbColumnName="EmployeeKey" msprop:FriendlyName="EmployeeKey" type="xs:int" />
+                            <xs:element name="EmployeeID" msprop:DbColumnName="EmployeeID" msprop:FriendlyName="EmployeeID" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="FirstName" msprop:DbColumnName="FirstName" msprop:FriendlyName="FirstName" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="LastName" msprop:DbColumnName="LastName" msprop:FriendlyName="LastName" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="BirthDate" msprop:DbColumnName="BirthDate" msprop:FriendlyName="BirthDate" type="xs:dateTime" minOccurs="0" />
+                            <xs:element name="Adress" msprop:DbColumnName="Adress" msprop:FriendlyName="Adress" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="100" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Email" msprop:DbColumnName="Email" msprop:FriendlyName="Email" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="70" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Phone" msprop:DbColumnName="Phone" msprop:FriendlyName="Phone" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Function" msprop:DbColumnName="Function" msprop:FriendlyName="Function" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Gender" msprop:DbColumnName="Gender" msprop:FriendlyName="Gender" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="1" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="DepartmentName" msprop:DbColumnName="DepartmentName" msprop:FriendlyName="DepartmentName" minOccurs="0">
+                              <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                  <xs:maxLength value="50" />
+                                </xs:restriction>
+                              </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="HiringDate" msprop:DbColumnName="HiringDate" msprop:FriendlyName="HiringDate" type="xs:dateTime" minOccurs="0" />
+                            <xs:element name="SalariedFlag" msprop:DbColumnName="SalariedFlag" msprop:FriendlyName="SalariedFlag" type="xs:boolean" minOccurs="0" />
+                            <xs:element name="RowStatus" msprop:DbColumnName="RowStatus" msprop:FriendlyName="RowStatus" type="xs:boolean" minOccurs="0" />
+                            <xs:element name="ActionFlag" msprop:DbColumnName="ActionFlag" msprop:FriendlyName="ActionFlag" type="xs:boolean" minOccurs="0" />
+                          </xs:sequence>
+                        </xs:complexType>
+                      </xs:element>
+                    </xs:choice>
+                  </xs:complexType>
+                  <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+                    <xs:selector xpath=".//dbo_FactHRSnapshot" />
+                    <xs:field xpath="EmployeeKey" />
+                    <xs:field xpath="DepartmentKey" />
+                    <xs:field xpath="HiringDateKey" />
+                  </xs:unique>
+                  <xs:unique name="dbo_DimDate_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                    <xs:selector xpath=".//dbo_DimDate" />
+                    <xs:field xpath="DateKey" />
+                  </xs:unique>
+                  <xs:unique name="dbo_DimDepartment_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+                    <xs:selector xpath=".//dbo_DimDepartment" />
+                    <xs:field xpath="DepartmentKey" />
+                  </xs:unique>
+                  <xs:unique name="dbo_DimEmployee_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
+                    <xs:selector xpath=".//dbo_DimEmployee" />
+                    <xs:field xpath="EmployeeKey" />
+                  </xs:unique>
+                  <xs:keyref name="FK_FactHRSnapshot_DimDate" refer="dbo_DimDate_Constraint1">
+                    <xs:selector xpath=".//dbo_FactHRSnapshot" />
+                    <xs:field xpath="HiringDateKey" />
+                  </xs:keyref>
+                  <xs:keyref name="FK_FactHRSnapshot_DimEmployee" refer="dbo_DimEmployee_Constraint1">
+                    <xs:selector xpath=".//dbo_FactHRSnapshot" />
+                    <xs:field xpath="EmployeeKey" />
+                  </xs:keyref>
+                </xs:element>
+                <xs:annotation>
+                  <xs:appinfo>
+                    <msdata:Relationship name="FK_FactHRSnapshot_DimDepartment" msdata:parent="dbo_DimDepartment" msdata:child="dbo_FactHRSnapshot" msdata:parentkey="DepartmentKey" msdata:childkey="DepartmentKey" msprop:IsLogical="True" />
+                  </xs:appinfo>
+                </xs:annotation>
+              </xs:schema>
+              <HR_x0020_Cube xmlns="" />
+            </Schema>
+          </DataSourceView>
+        </DataSourceViews>
+        <Roles>
+          <Role>
+            <ID>Role</ID>
+            <Name>Restricted Role</Name>
+          </Role>
+          <Role>
+            <ID>Role 1</ID>
+            <Name>TestRole</Name>
+          </Role>
+        </Roles>
+      </Database>
+    </ObjectDefinition>
+  </Alter>
+  <Process>
+    <Type>ProcessDefault</Type>
+    <Object>
+      <DatabaseID>HR_SSAS_Project</DatabaseID>
+    </Object>
+  </Process>
+</Batch>

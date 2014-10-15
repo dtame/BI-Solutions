@@ -248,6 +248,7 @@
               <TableID>dbo_FactHRSnapshot</TableID>
             </Source>
           </Source>
+          <FormatString>Standard</FormatString>
         </Measure>
       </Measures>
       <StorageMode>Molap</StorageMode>
@@ -308,7 +309,6 @@
           </Attributes>
         </Dimension>
       </Dimensions>
-      <Partitions />
     </MeasureGroup>
   </MeasureGroups>
   <Source dwd:design-time-name="13edcfb7-e6c3-422b-afd4-b6d792049ec2">
@@ -318,8 +318,8 @@
     <MdxScript dwd:design-time-name="118a43b1-ce8e-448d-855d-45d1eacdf344">
       <ID>MdxScript</ID>
       <Name>MdxScript</Name>
-      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
-      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
       <Commands>
         <Command>
           <Text>/*
